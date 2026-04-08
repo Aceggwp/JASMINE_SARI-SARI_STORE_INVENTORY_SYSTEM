@@ -1,4 +1,4 @@
-<?= $this->extend('layout/header') ?>
+<?= $this->extend('layout/auth') ?>
 <?= $this->section('content') ?>
 
 <div class="row justify-content-center mt-5">
