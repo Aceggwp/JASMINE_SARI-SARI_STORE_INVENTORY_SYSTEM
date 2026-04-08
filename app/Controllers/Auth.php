@@ -6,6 +6,7 @@ use App\Models\UserModel;
 
 class Auth extends BaseController
 {
+    // Show login form
     public function login()
     {
         if (session()->get('is_logged_in')) {
@@ -14,37 +15,36 @@ class Auth extends BaseController
         return view('auth/login');
     }
     
-    public function attempt()
+    // Process login attempt
+    public function auth()
     {
         $session = session();
         $model = new UserModel();
         
-        $username = $this->request->getVar('username');
-        $password = $this->request->getVar('password');
+        $username = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
         
-        // Find user by username or email
         $user = $model->where('username', $username)
                       ->orWhere('email', $username)
                       ->where('is_active', 1)
                       ->first();
         
         if ($user && password_verify($password, $user['password'])) {
-            $sessionData = [
-                'user_id' => $user['id'],
-                'username' => $user['username'],
-                'full_name' => $user['full_name'],
-                'role' => $user['role'],
-                'is_logged_in' => true
-            ];
-            $session->set($sessionData);
+            $session->set([
+                'user_id'     => $user['id'],
+                'username'    => $user['username'],
+                'full_name'   => $user['full_name'],
+                'role'        => $user['role'],
+                'is_logged_in'=> true
+            ]);
             log_activity('Login', "User {$user['username']} logged in");
             return redirect()->to('/dashboard');
         } else {
-            // Optional: log failed attempt
             return redirect()->to('/login')->with('error', 'Invalid username or password');
         }
     }
     
+    // Show registration form
     public function register()
     {
         if (session()->get('is_logged_in')) {
@@ -53,11 +53,11 @@ class Auth extends BaseController
         return view('auth/register');
     }
     
+    // Process registration
     public function doRegister()
     {
         $model = new UserModel();
         
-        // Validation rules
         $rules = [
             'username' => 'required|min_length[3]|is_unique[users.username]',
             'email'    => 'required|valid_email|is_unique[users.email]',
@@ -70,35 +70,24 @@ class Auth extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
         
-        $hashedPassword = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
-        
         $data = [
-            'username'   => trim($this->request->getPost('username')),
-            'email'      => trim($this->request->getPost('email')),
-            'full_name'  => trim($this->request->getPost('full_name')),
-            'password'   => $hashedPassword,
+            'username'   => $this->request->getPost('username'),
+            'email'      => $this->request->getPost('email'),
+            'full_name'  => $this->request->getPost('full_name'),
+            'password'   => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
             'role'       => 'staff',
             'is_active'  => 1
         ];
         
-        // Debug: log the data (remove after testing)
-        // log_message('debug', 'Registration data: ' . print_r($data, true));
-        
         if ($model->insert($data)) {
-            // Verify user was actually inserted
-            $newUser = $model->where('username', $data['username'])->first();
-            if ($newUser && password_verify($this->request->getPost('password'), $newUser['password'])) {
-                log_activity('User Registered', "New user registered: {$data['username']}");
-                return redirect()->to('/login')->with('success', 'Registration successful! Please login.');
-            } else {
-                // Something went wrong with password hashing
-                return redirect()->back()->withInput()->with('error', 'Registration failed due to internal error. Please try again.');
-            }
+            log_activity('User Registered', "New user: {$data['username']}");
+            return redirect()->to('/login')->with('success', 'Registration successful. Please login.');
         }
         
-        return redirect()->back()->withInput()->with('error', 'Registration failed. Username or email may already exist.');
+        return redirect()->back()->withInput()->with('error', 'Registration failed.');
     }
     
+    // Logout
     public function logout()
     {
         log_activity('Logout', "User " . session()->get('username') . " logged out");

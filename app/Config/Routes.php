@@ -2,6 +2,11 @@
 
 namespace Config;
 
+use CodeIgniter\Router\RouteCollection;
+
+/**
+ * @var RouteCollection $routes
+ */
 $routes = Services::routes();
 
 if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
@@ -13,58 +18,69 @@ $routes->setDefaultController('Auth');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
+$routes->setAutoRoute(false);
 
-// Auth Routes (public)
+// ==================== AUTHENTICATION (Public) ====================
 $routes->get('/', 'Auth::login');
 $routes->get('/login', 'Auth::login');
-$routes->post('/auth/attempt', 'Auth::attempt');
-$routes->get('/register', 'Auth::register');          // show registration form
-$routes->post('/auth/register', 'Auth::doRegister'); // process registration
+$routes->post('/login', 'Auth::auth');
+$routes->post('/auth', 'Auth::auth');
+$routes->post('/auth/attempt', 'Auth::auth');  // <-- ADD THIS LINE
+$routes->get('/register', 'Auth::register');
+$routes->post('/register', 'Auth::doRegister');
+$routes->post('/auth/register', 'Auth::doRegister');
 $routes->get('/logout', 'Auth::logout');
 
-// Protected Routes (with auth filter)
+// ==================== PROTECTED ROUTES (Logged in users) ====================
 $routes->group('', ['filter' => 'auth'], function($routes) {
+    
+    // Logs (accessible by admin/staff)
+    $routes->get('/logs', 'Logs::index');
+
     // Dashboard
     $routes->get('/dashboard', 'Dashboard::index');
     
-    // Categories
-    $routes->resource('categories', ['controller' => 'Categories']);
+    // Sales (POS, Cart, History, Receipt)
+    $routes->get('/sales', 'Sales::index');              // <-- ADD THIS (list of sales)
+    $routes->get('/sales/pos', 'Sales::pos');
+    $routes->post('/sales/addToCart', 'Sales::addToCart');
+    $routes->get('/sales/getCart', 'Sales::getCart');
+    $routes->post('/sales/updateCart', 'Sales::updateCart');
+    $routes->get('/sales/removeFromCart/(:num)', 'Sales::removeFromCart/$1');
+    $routes->post('/sales/checkout', 'Sales::checkout');
+    $routes->get('/sales/receipt/(:num)', 'Sales::receipt/$1');
+    $routes->get('/sales/history', 'Sales::history');
     
-    // Products
-    $routes->resource('products', ['controller' => 'Products']);
-    $routes->post('products/update-stock/(:num)', 'Products::updateStock/$1');
+    // Reports (accessible by both admin and staff)
+    $routes->get('/reports', 'Reports::index');
     
-    // Sales
-    $routes->get('sales', 'Sales::index');
-    $routes->get('sales/create', 'Sales::create');
-    $routes->post('sales/store', 'Sales::store');
-    $routes->get('sales/(:num)', 'Sales::show/$1');
-    $routes->get('sales/invoice/(:num)', 'Sales::invoice/$1');
-    $routes->delete('sales/(:num)', 'Sales::delete/$1');
-    
-    // Stock Management
-    $routes->get('stock', 'Stock::index');
-    $routes->get('stock/adjust', 'Stock::adjust');
-    $routes->post('stock/adjust-store', 'Stock::adjustStore');
-    $routes->get('stock/logs', 'Stock::logs');
-    
-    // Logs
-    $routes->get('logs', 'Logs::index');
-    
-    // Users (admin only)
-    $routes->group('users', ['filter' => 'admin'], function($routes) {
-        $routes->get('/', 'Users::index');
-        $routes->get('create', 'Users::create');
-        $routes->post('store', 'Users::store');
-        $routes->get('edit/(:num)', 'Users::edit/$1');
-        $routes->post('update/(:num)', 'Users::update/$1');
-        $routes->delete('delete/(:num)', 'Users::delete/$1');
+    // ========== ADMIN ONLY ROUTES ==========
+    $routes->group('', ['filter' => 'auth:admin'], function($routes) {
+        
+        // Product Management (GET = view, POST = create/update/delete)
+        $routes->get('/products', 'Products::index');
+        $routes->get('/products/create', 'Products::create');
+        $routes->post('/products/store', 'Products::store');
+        $routes->get('/products/edit/(:num)', 'Products::edit/$1');
+        $routes->post('/products/update/(:num)', 'Products::update/$1');
+        $routes->get('/products/delete/(:num)', 'Products::delete/$1');
+        
+        // Category Management
+        $routes->get('/categories', 'Categories::index');
+        $routes->post('/categories/store', 'Categories::store');
+        $routes->post('/categories/update/(:num)', 'Categories::update/$1');
+        $routes->get('/categories/delete/(:num)', 'Categories::delete/$1');
+        
+        // Stock Management
+        $routes->get('/stock', 'Stock::index');
+        $routes->post('/stock/add', 'Stock::addStock');
+        
+        // User Management
+        $routes->get('/users', 'Users::index');
+        $routes->get('/users/create', 'Users::create');
+        $routes->post('/users/store', 'Users::store');
+        $routes->get('/users/edit/(:num)', 'Users::edit/$1');        // <-- ADD THIS
+        $routes->post('/users/update/(:num)', 'Users::update/$1');
+        $routes->get('/users/delete/(:num)', 'Users::delete/$1');
     });
-
-    
-    
-    // AJAX endpoints
-    $routes->get('api/get-product/(:any)', 'Api::getProduct/$1');
-    $routes->get('api/get-products', 'Api::getProducts');
 });
-

@@ -1,10 +1,11 @@
-<?= $this->extend('layout/header') ?>
+<?= $this->extend('layout/app') ?>
 <?= $this->section('content') ?>
 
 <h2><?= isset($category) ? 'Edit' : 'Add' ?> Category</h2>
 
 <form action="<?= isset($category) ? base_url('/categories/update/'.$category['id']) : base_url('/categories/store') ?>" method="post">
     <?= csrf_field() ?>
+    
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" name="name" value="<?= $category['name'] ?? '' ?>" required>

@@ -8,15 +8,7 @@
 
 <table class="table table-bordered datatable">
     <thead>
-        <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Full Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
+        <tr><th>ID</th><th>Username</th><th>Full Name</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th></tr>
     </thead>
     <tbody>
         <?php foreach($users as $user): ?>
@@ -30,12 +22,14 @@
             <td>
                 <a href="<?= base_url('/users/edit/'.$user['id']) ?>" class="btn btn-sm btn-warning">Edit</a>
                 <?php if($user['id'] != session()->get('user_id')): ?>
-                <a href="<?= base_url('/users/delete/'.$user['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete this user?')">Delete</a>
+                <a href="<?= base_url('/users/delete/'.$user['id']) ?>" 
+   class="btn btn-sm btn-danger" 
+   onclick="return confirm('Delete user?')">Delete</a>
                 <?php endif; ?>
-             </td>
+            </td>
         </tr>
         <?php endforeach; ?>
     </tbody>
-</table>
+</tr>
 
 <?= $this->endSection() ?>

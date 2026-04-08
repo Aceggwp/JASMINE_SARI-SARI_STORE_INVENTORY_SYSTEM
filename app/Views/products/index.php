@@ -9,15 +9,7 @@
 <table class="table table-bordered datatable">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>SKU</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Stock</th>
-            <th>Reorder Level</th>
-            <th>Status</th>
-            <th>Actions</th>
+            <th>ID</th><th>Name</th><th>SKU</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -28,15 +20,16 @@
             <td><?= esc($product['sku']) ?></td>
             <td><?= esc($product['category_name'] ?? 'Uncategorized') ?></td>
             <td>₱<?= number_format($product['price'], 2) ?></td>
-            <td class="<?= $product['quantity'] <= $product['reorder_level'] ? 'text-danger fw-bold' : '' ?>">
+            <td class="<?= ($product['quantity'] <= $product['reorder_level']) ? 'text-danger' : '' ?>">
                 <?= $product['quantity'] ?>
             </td>
-            <td><?= $product['reorder_level'] ?></td>
             <td><?= $product['status'] ? 'Active' : 'Inactive' ?></td>
             <td>
                 <a href="<?= base_url('/products/edit/'.$product['id']) ?>" class="btn btn-sm btn-warning">Edit</a>
-                <a href="<?= base_url('/products/delete/'.$product['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
-             </td>
+                <a href="<?= base_url('/products/delete/'.$product['id']) ?>" 
+   class="btn btn-sm btn-danger" 
+   onclick="return confirm('Delete product?')">Delete</a>
+            </td>
         </tr>
         <?php endforeach; ?>
     </tbody>
