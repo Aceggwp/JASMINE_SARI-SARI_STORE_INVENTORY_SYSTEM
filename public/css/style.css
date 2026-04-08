@@ -285,3 +285,36 @@ body {
         right: 10px;
     }
 }
+
+/* Navbar styling for both modes */
+.navbar {
+    background-color: var(--card-bg) !important;
+    box-shadow: var(--shadow-sm);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* Ensure navbar text is always visible */
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: var(--text-primary) !important;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: var(--btn-primary-bg) !important;
+}
+
+/* For the welcome text (non-link) */
+.navbar .navbar-nav .nav-link.text-light {
+    color: var(--text-primary) !important;
+}
+
+:root {
+    /* Light Mode (Pastel) */
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #2d3e50;   /* dark blue-gray, good contrast */
+    --text-secondary: #5a6e7c;
+    /* ... rest */
+}

@@ -48,4 +48,45 @@ class Auth extends BaseController
         session()->destroy();
         return redirect()->to('/login');
     }
+
+    public function register()
+{
+    if (session()->get('is_logged_in')) {
+        return redirect()->to('/dashboard');
+    }
+    return view('auth/register');
+}
+
+public function doRegister()
+{
+    $model = new \App\Models\UserModel();
+    
+    $rules = [
+        'username' => 'required|min_length[3]|is_unique[users.username]',
+        'email'    => 'required|valid_email|is_unique[users.email]',
+        'full_name'=> 'required|min_length[3]',
+        'password' => 'required|min_length[6]',
+        'confirm_password' => 'required|matches[password]'
+    ];
+    
+    if (!$this->validate($rules)) {
+        return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+    }
+    
+    $data = [
+        'username'   => $this->request->getPost('username'),
+        'email'      => $this->request->getPost('email'),
+        'full_name'  => $this->request->getPost('full_name'),
+        'password'   => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+        'role'       => 'staff',   // default role
+        'is_active'  => 1
+    ];
+    
+    if ($model->insert($data)) {
+        log_activity('User Registered', "New user registered: {$data['username']}");
+        return redirect()->to('/login')->with('success', 'Registration successful. Please login.');
+    }
+    
+    return redirect()->back()->with('error', 'Registration failed. Please try again.');
+}
 }

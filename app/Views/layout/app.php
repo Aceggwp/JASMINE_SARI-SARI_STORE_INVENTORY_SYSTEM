@@ -20,7 +20,7 @@
                 </button>
                 <a class="navbar-brand" href="#">Jasmine Sari Sari Store</a>
                 <div class="navbar-nav ms-auto">
-                    <span class="nav-link text-light">Welcome, <?= session()->get('full_name') ?></span>
+                    <span class="nav-link">Welcome, <?= session()->get('full_name') ?></span>
                     <a class="nav-link" href="<?= base_url('/logout') ?>">Logout</a>
                 </div>
             </div>

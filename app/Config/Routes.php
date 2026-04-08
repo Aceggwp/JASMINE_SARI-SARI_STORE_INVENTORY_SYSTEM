@@ -18,6 +18,8 @@ $routes->set404Override();
 $routes->get('/', 'Auth::login');
 $routes->get('/login', 'Auth::login');
 $routes->post('/auth/attempt', 'Auth::attempt');
+$routes->get('/register', 'Auth::register');          // show registration form
+$routes->post('/auth/register', 'Auth::doRegister'); // process registration
 $routes->get('/logout', 'Auth::logout');
 
 // Protected Routes (with auth filter)
@@ -58,6 +60,8 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
         $routes->post('update/(:num)', 'Users::update/$1');
         $routes->delete('delete/(:num)', 'Users::delete/$1');
     });
+
+    
     
     // AJAX endpoints
     $routes->get('api/get-product/(:any)', 'Api::getProduct/$1');
