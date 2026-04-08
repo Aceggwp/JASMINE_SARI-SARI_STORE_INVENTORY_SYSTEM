@@ -34,6 +34,7 @@ $routes->get('/logout', 'Auth::logout');
 // ==================== PROTECTED ROUTES (Logged in users) ====================
 $routes->group('', ['filter' => 'auth'], function($routes) {
     
+    
     // Logs (accessible by admin/staff)
     $routes->get('/logs', 'Logs::index');
 
@@ -41,6 +42,7 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
     $routes->get('/dashboard', 'Dashboard::index');
     
     // Sales (POS, Cart, History, Receipt)
+    $routes->get('/sales/create', 'Sales::create');   // Show sale creation form
     $routes->get('/sales', 'Sales::index');              // <-- ADD THIS (list of sales)
     $routes->get('/sales/pos', 'Sales::pos');
     $routes->post('/sales/addToCart', 'Sales::addToCart');
