@@ -2,10 +2,13 @@
 <?= $this->section('content') ?>
 
 <div class="card auth-card">
-    <div class="card-header text-center">
-        <h4><i class="fas fa-user"></i> Customer Login</h4>
-        <p class="text-muted">Login to shop</p>
-    </div>
+    <hr>
+<div class="text-center">
+    <small>New customer? <a href="<?= base_url('/customer/register') ?>">Register as Customer</a></small>
+</div>
+<div class="text-center mt-2">
+    <small>Staff login? <a href="<?= base_url('/login') ?>">Staff Login</a></small>
+</div>
     <div class="card-body p-4">
         <?php if(session()->getFlashdata('error')): ?>
             <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>

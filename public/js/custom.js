@@ -79,4 +79,12 @@ $(document).ready(function() {
     if ($('.counter').length) {
         animateCounters();
     }
+
+    function updateCartCount() {
+    $.get('/cart/getCartCount', function(data) {
+        $('#cart-count').text(data.count);
+    });
+}
+// Call after add/remove
+
 });

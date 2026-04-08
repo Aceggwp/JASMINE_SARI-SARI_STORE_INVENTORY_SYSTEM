@@ -2,13 +2,13 @@
 <?= $this->section('content') ?>
 
 <div class="card auth-card shadow-lg border-0 rounded-4 overflow-hidden">
-    <div class="card-header bg-transparent border-0 text-center pt-4">
-        <div class="mb-3">
-            <i class="fas fa-store fa-3x" style="color: var(--btn-primary-bg);"></i>
-        </div>
-        <h3 class="fw-bold mb-1">Welcome Back</h3>
-        <p class="text-muted small">Sign in to continue</p>
-    </div>
+<hr>
+<div class="text-center">
+    <small>Don't have a staff account? <a href="<?= base_url('/register') ?>">Register as Staff</a></small>
+</div>
+<div class="text-center mt-2">
+    <small>Are you a customer? <a href="<?= base_url('/customer/login') ?>">Customer Login</a></small>
+</div>
     <div class="card-body p-4 pt-0">
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">

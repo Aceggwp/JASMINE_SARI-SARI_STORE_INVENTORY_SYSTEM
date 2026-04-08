@@ -72,8 +72,8 @@ class CustomerAuth extends BaseController
     }
 
     public function logout()
-    {
-        session()->remove(['customer_id', 'customer_name', 'customer_email', 'customer_logged_in']);
-        return redirect()->to('/customer/login')->with('success', 'Logged out successfully.');
-    }
+{
+    session()->remove(['customer_id', 'customer_name', 'customer_email', 'customer_logged_in']);
+    return redirect()->to('/customer/login')->with('success', 'Logged out successfully.');
+}
 }

@@ -2,11 +2,13 @@
 <?= $this->section('content') ?>
 
 <div class="card auth-card shadow-lg border-0 rounded-4 overflow-hidden">
-    <div class="card-header bg-transparent border-0 text-center pt-4">
-        <div class="mb-3">
-            <i class="fas fa-user-plus fa-3x" style="color: var(--btn-primary-bg);"></i>
-        </div>
+    <div class="card-header text-center">
+    <h4><i class="fas fa-user-tie"></i> Staff Registration</h4>
+    <p class="text-muted">Create a staff account to manage the store</p>
+</div>
         <h3 class="fw-bold mb-1">Create Account</h3>
+        <h4><i class="fas fa-user-tie"></i> Staff Registration</h4>
+<p class="text-muted">Create a staff account (for store management)</p>
         <p class="text-muted small">Join our store management system</p>
     </div>
     <div class="card-body p-4 pt-0">
