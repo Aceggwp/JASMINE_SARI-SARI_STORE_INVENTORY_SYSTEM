@@ -23,18 +23,13 @@ class Filters extends BaseConfig
 
     public $globals = [
         'before' => [
-            // 'honeypot',
             'csrf',
-            // 'invalidchars',
         ],
         'after' => [
             'toolbar',
-            // 'honeypot',
-            // 'secureheaders',
         ],
     ];
 
     public $methods = [];
-
     public $filters = [];
 }

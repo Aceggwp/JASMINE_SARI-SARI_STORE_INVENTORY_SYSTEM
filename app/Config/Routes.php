@@ -64,6 +64,3 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
     $routes->get('api/get-products', 'Api::getProducts');
 });
 
-if (file_exists(APPPATH . 'Config/Routes.php')) {
-    require APPPATH . 'Config/Routes.php';
-}

@@ -9,6 +9,7 @@ use Psr\Log\LoggerInterface;
 
 class BaseController extends Controller
 {
+   
     protected $helpers = ['url', 'form', 'session', 'activity'];
     protected $session;
     
