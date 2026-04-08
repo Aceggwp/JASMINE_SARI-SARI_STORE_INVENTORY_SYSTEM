@@ -115,7 +115,7 @@ class Shop extends BaseController
             return redirect()->to('/shop')->with('error', 'Cart is empty.');
         }
 
-        $customerName = $this->request->getPost('customer_name');
+        $customerName = $this->request->getPost('customer_id');
         $paymentMethod = $this->request->getPost('payment_method');
         $notes = $this->request->getPost('notes');
 
@@ -138,9 +138,9 @@ class Shop extends BaseController
         $saleModel = new SaleModel();
         $saleData = [
             'invoice_no'     => $invoiceNo,
-            'user_id'        => session()->get('customer_id'), // now customer ID
+            'user_id'        => null,
             'customer_name'  => $customerName,
-            'total_amount'   => $totalAmount,
+            'total_amount'   => $totalAmount,  
             'discount'       => $discount,
             'tax'            => $tax,
             'grand_total'    => $grandTotal,
@@ -193,15 +193,23 @@ class Shop extends BaseController
     }
 
     public function orderSuccess($invoiceNo)
-    {
-        $saleModel = new SaleModel();
-        $sale = $saleModel->where('invoice_no', $invoiceNo)->first();
-        if (!$sale) {
-            return redirect()->to('/shop')->with('error', 'Order not found.');
-        }
-        $data['sale'] = $sale;
-        return view('shop/success', $data);
+{
+    $saleModel = new SaleModel();
+    $sale = $saleModel->where('invoice_no', $invoiceNo)->first();
+    if (!$sale) {
+        return redirect()->to('/shop')->with('error', 'Order not found.');
     }
+    
+    $saleItemModel = new SaleItemModel();
+    $items = $saleItemModel->select('sale_items.*, products.name as product_name')
+                           ->join('products', 'products.id = sale_items.product_id')
+                           ->where('sale_id', $sale['id'])
+                           ->findAll();
+    
+    $data['sale'] = $sale;
+    $data['items'] = $items;
+    return view('shop/success', $data);
+}
 
     private function calculateCartTotal($cart)
     {

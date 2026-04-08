@@ -3119,3 +3119,671 @@ in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
 13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+INFO - 2026-04-08 06:40:22 --> CSRF token verified.
+DEBUG - 2026-04-08 06:40:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 06:40:22 --> Cannot add or update a child row: a foreign key constraint fails (`inventory_system`.`sales`, CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-9614\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:22\', \'2026-04-08 06:40:22\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-9614\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:22\', \'2026-04-08 06:40:22\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-9614\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:22\', \'2026-04-08 06:40:22\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (:invoice_no:, :user_id:, :customer_name:, :total_amount:, :discount:, :tax:, :grand_total:, :payment_method:, :payment_status:, :notes:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(152): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 06:40:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`inventory_system`.`sales`, CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL)
+[Method: POST, Route: checkout/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (:invoice_no:, :user_id:, :customer_name:, :total_amount:, :discount:, :tax:, :grand_total:, :payment_method:, :payment_status:, :notes:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Shop.php(152): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 06:40:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`inventory_system`.`sales`, CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-9614\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:22\', \'2026-04-08 06:40:22\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-9614\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:22\', \'2026-04-08 06:40:22\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (:invoice_no:, :user_id:, :customer_name:, :total_amount:, :discount:, :tax:, :grand_total:, :payment_method:, :payment_status:, :notes:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Shop.php(152): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 06:40:22 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`inventory_system`.`sales`, CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-9614\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:22\', \'2026-04-08 06:40:22\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-9614\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:22\', \'2026-04-08 06:40:22\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-9614\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:22\', \'2026-04-08 06:40:22\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (:invoice_no:, :user_id:, :customer_name:, :total_amount:, :discount:, :tax:, :grand_total:, :payment_method:, :payment_status:, :notes:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(152): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 06:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 06:40:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 06:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 06:40:59 --> CSRF token verified.
+DEBUG - 2026-04-08 06:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 06:40:59 --> Cannot add or update a child row: a foreign key constraint fails (`inventory_system`.`sales`, CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-4132\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:59\', \'2026-04-08 06:40:59\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-4132\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:59\', \'2026-04-08 06:40:59\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-4132\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:59\', \'2026-04-08 06:40:59\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (:invoice_no:, :user_id:, :customer_name:, :total_amount:, :discount:, :tax:, :grand_total:, :payment_method:, :payment_status:, :notes:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(152): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 06:40:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`inventory_system`.`sales`, CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL)
+[Method: POST, Route: checkout/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (:invoice_no:, :user_id:, :customer_name:, :total_amount:, :discount:, :tax:, :grand_total:, :payment_method:, :payment_status:, :notes:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Shop.php(152): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 06:40:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`inventory_system`.`sales`, CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-4132\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:59\', \'2026-04-08 06:40:59\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-4132\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:59\', \'2026-04-08 06:40:59\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (:invoice_no:, :user_id:, :customer_name:, :total_amount:, :discount:, :tax:, :grand_total:, :payment_method:, :payment_status:, :notes:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Shop.php(152): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 06:40:59 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`inventory_system`.`sales`, CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-4132\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:59\', \'2026-04-08 06:40:59\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-4132\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:59\', \'2026-04-08 06:40:59\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (\'INV-20260408-4132\', \'2\', \'dasdas\', 45, 0, 0, 45, \'cash\', \'paid\', \'\', \'2026-04-08 06:40:59\', \'2026-04-08 06:40:59\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sales` (`invoice_no`, `user_id`, `customer_name`, `total_amount`, `discount`, `tax`, `grand_total`, `payment_method`, `payment_status`, `notes`, `created_at`, `updated_at`) VALUES (:invoice_no:, :user_id:, :customer_name:, :total_amount:, :discount:, :tax:, :grand_total:, :payment_method:, :payment_status:, :notes:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(152): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 07:20:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 07:20:45 --> CSRF token verified.
+DEBUG - 2026-04-08 07:20:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 07:20:45 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '15', 14, 'sale', 'INV-20260408-4086', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'15\', 14, \'sale\', \'INV-20260408-4086\', \'Customer purchase\', \'2026-04-08 07:20:45\', \'2026-04-08 07:20:45\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'15\', 14, \'sale\', \'INV-20260408-4086\', \'Customer purchase\', \'2026-04-08 07:20:45\', \'2026-04-08 07:20:45\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'15\', 14, \'sale\', \'INV-20260408-4086\', \'Customer purchase\', \'2026-04-08 07:20:45\', \'2026-04-08 07:20:45\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:20:45 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '15', 14, 'sale', 'INV-20260408-4086', 'Customer pur...' at line 1
+[Method: POST, Route: checkout/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:20:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '15', 14, 'sale', 'INV-20260408-4086', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'15\', 14, \'sale\', \'INV-20260408-4086\', \'Customer purchase\', \'2026-04-08 07:20:45\', \'2026-04-08 07:20:45\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'15\', 14, \'sale\', \'INV-20260408-4086\', \'Customer purchase\', \'2026-04-08 07:20:45\', \'2026-04-08 07:20:45\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:20:45 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '15', 14, 'sale', 'INV-20260408-4086', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'15\', 14, \'sale\', \'INV-20260408-4086\', \'Customer purchase\', \'2026-04-08 07:20:45\', \'2026-04-08 07:20:45\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'15\', 14, \'sale\', \'INV-20260408-4086\', \'Customer purchase\', \'2026-04-08 07:20:45\', \'2026-04-08 07:20:45\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'15\', 14, \'sale\', \'INV-20260408-4086\', \'Customer purchase\', \'2026-04-08 07:20:45\', \'2026-04-08 07:20:45\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+INFO - 2026-04-08 07:22:18 --> CSRF token verified.
+DEBUG - 2026-04-08 07:22:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 07:22:18 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '14', 13, 'sale', 'INV-20260408-3959', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'14\', 13, \'sale\', \'INV-20260408-3959\', \'Customer purchase\', \'2026-04-08 07:22:18\', \'2026-04-08 07:22:18\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'14\', 13, \'sale\', \'INV-20260408-3959\', \'Customer purchase\', \'2026-04-08 07:22:18\', \'2026-04-08 07:22:18\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'14\', 13, \'sale\', \'INV-20260408-3959\', \'Customer purchase\', \'2026-04-08 07:22:18\', \'2026-04-08 07:22:18\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:22:18 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '14', 13, 'sale', 'INV-20260408-3959', 'Customer pur...' at line 1
+[Method: POST, Route: checkout/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:22:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '14', 13, 'sale', 'INV-20260408-3959', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'14\', 13, \'sale\', \'INV-20260408-3959\', \'Customer purchase\', \'2026-04-08 07:22:18\', \'2026-04-08 07:22:18\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'14\', 13, \'sale\', \'INV-20260408-3959\', \'Customer purchase\', \'2026-04-08 07:22:18\', \'2026-04-08 07:22:18\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:22:18 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '14', 13, 'sale', 'INV-20260408-3959', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'14\', 13, \'sale\', \'INV-20260408-3959\', \'Customer purchase\', \'2026-04-08 07:22:18\', \'2026-04-08 07:22:18\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'14\', 13, \'sale\', \'INV-20260408-3959\', \'Customer purchase\', \'2026-04-08 07:22:18\', \'2026-04-08 07:22:18\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'14\', 13, \'sale\', \'INV-20260408-3959\', \'Customer purchase\', \'2026-04-08 07:22:18\', \'2026-04-08 07:22:18\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+INFO - 2026-04-08 07:22:38 --> CSRF token verified.
+DEBUG - 2026-04-08 07:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 07:22:38 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '13', 12, 'sale', 'INV-20260408-5707', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'13\', 12, \'sale\', \'INV-20260408-5707\', \'Customer purchase\', \'2026-04-08 07:22:38\', \'2026-04-08 07:22:38\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'13\', 12, \'sale\', \'INV-20260408-5707\', \'Customer purchase\', \'2026-04-08 07:22:38\', \'2026-04-08 07:22:38\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'13\', 12, \'sale\', \'INV-20260408-5707\', \'Customer purchase\', \'2026-04-08 07:22:38\', \'2026-04-08 07:22:38\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:22:38 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '13', 12, 'sale', 'INV-20260408-5707', 'Customer pur...' at line 1
+[Method: POST, Route: checkout/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:22:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '13', 12, 'sale', 'INV-20260408-5707', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'13\', 12, \'sale\', \'INV-20260408-5707\', \'Customer purchase\', \'2026-04-08 07:22:38\', \'2026-04-08 07:22:38\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'13\', 12, \'sale\', \'INV-20260408-5707\', \'Customer purchase\', \'2026-04-08 07:22:38\', \'2026-04-08 07:22:38\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:22:39 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '13', 12, 'sale', 'INV-20260408-5707', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'13\', 12, \'sale\', \'INV-20260408-5707\', \'Customer purchase\', \'2026-04-08 07:22:38\', \'2026-04-08 07:22:38\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'13\', 12, \'sale\', \'INV-20260408-5707\', \'Customer purchase\', \'2026-04-08 07:22:38\', \'2026-04-08 07:22:38\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'13\', 12, \'sale\', \'INV-20260408-5707\', \'Customer purchase\', \'2026-04-08 07:22:38\', \'2026-04-08 07:22:38\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 07:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:24:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:27:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:27:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 07:27:08 --> CSRF token verified.
+DEBUG - 2026-04-08 07:27:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:27:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:27:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 07:27:09 --> CSRF token verified.
+DEBUG - 2026-04-08 07:27:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:27:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 07:27:11 --> CSRF token verified.
+DEBUG - 2026-04-08 07:27:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:27:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 07:27:13 --> CSRF token verified.
+DEBUG - 2026-04-08 07:27:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:27:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 07:27:15 --> CSRF token verified.
+DEBUG - 2026-04-08 07:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 07:27:39 --> CSRF token verified.
+DEBUG - 2026-04-08 07:27:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 07:27:39 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '12', 11, 'sale', 'INV-20260408-3881', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'12\', 11, \'sale\', \'INV-20260408-3881\', \'Customer purchase\', \'2026-04-08 07:27:39\', \'2026-04-08 07:27:39\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'12\', 11, \'sale\', \'INV-20260408-3881\', \'Customer purchase\', \'2026-04-08 07:27:39\', \'2026-04-08 07:27:39\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'12\', 11, \'sale\', \'INV-20260408-3881\', \'Customer purchase\', \'2026-04-08 07:27:39\', \'2026-04-08 07:27:39\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:27:39 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '12', 11, 'sale', 'INV-20260408-3881', 'Customer pur...' at line 1
+[Method: POST, Route: checkout/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:27:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '12', 11, 'sale', 'INV-20260408-3881', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'12\', 11, \'sale\', \'INV-20260408-3881\', \'Customer purchase\', \'2026-04-08 07:27:39\', \'2026-04-08 07:27:39\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'12\', 11, \'sale\', \'INV-20260408-3881\', \'Customer purchase\', \'2026-04-08 07:27:39\', \'2026-04-08 07:27:39\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:27:39 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '12', 11, 'sale', 'INV-20260408-3881', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'12\', 11, \'sale\', \'INV-20260408-3881\', \'Customer purchase\', \'2026-04-08 07:27:39\', \'2026-04-08 07:27:39\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'12\', 11, \'sale\', \'INV-20260408-3881\', \'Customer purchase\', \'2026-04-08 07:27:39\', \'2026-04-08 07:27:39\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'12\', 11, \'sale\', \'INV-20260408-3881\', \'Customer purchase\', \'2026-04-08 07:27:39\', \'2026-04-08 07:27:39\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+INFO - 2026-04-08 07:28:14 --> CSRF token verified.
+DEBUG - 2026-04-08 07:28:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 07:28:14 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '11', 10, 'sale', 'INV-20260408-6295', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'11\', 10, \'sale\', \'INV-20260408-6295\', \'Customer purchase\', \'2026-04-08 07:28:14\', \'2026-04-08 07:28:14\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'11\', 10, \'sale\', \'INV-20260408-6295\', \'Customer purchase\', \'2026-04-08 07:28:14\', \'2026-04-08 07:28:14\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'11\', 10, \'sale\', \'INV-20260408-6295\', \'Customer purchase\', \'2026-04-08 07:28:14\', \'2026-04-08 07:28:14\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:28:14 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '11', 10, 'sale', 'INV-20260408-6295', 'Customer pur...' at line 1
+[Method: POST, Route: checkout/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:28:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '11', 10, 'sale', 'INV-20260408-6295', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'11\', 10, \'sale\', \'INV-20260408-6295\', \'Customer purchase\', \'2026-04-08 07:28:14\', \'2026-04-08 07:28:14\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'11\', 10, \'sale\', \'INV-20260408-6295\', \'Customer purchase\', \'2026-04-08 07:28:14\', \'2026-04-08 07:28:14\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:28:14 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '11', 10, 'sale', 'INV-20260408-6295', 'Customer pur...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'11\', 10, \'sale\', \'INV-20260408-6295\', \'Customer purchase\', \'2026-04-08 07:28:14\', \'2026-04-08 07:28:14\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'11\', 10, \'sale\', \'INV-20260408-6295\', \'Customer purchase\', \'2026-04-08 07:28:14\', \'2026-04-08 07:28:14\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'11\', 10, \'sale\', \'INV-20260408-6295\', \'Customer purchase\', \'2026-04-08 07:28:14\', \'2026-04-08 07:28:14\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+INFO - 2026-04-08 07:28:16 --> CSRF token verified.
+DEBUG - 2026-04-08 07:28:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 07:28:16 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '10', 9, 'sale', 'INV-20260408-7909', 'Customer purc...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'10\', 9, \'sale\', \'INV-20260408-7909\', \'Customer purchase\', \'2026-04-08 07:28:16\', \'2026-04-08 07:28:16\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'10\', 9, \'sale\', \'INV-20260408-7909\', \'Customer purchase\', \'2026-04-08 07:28:16\', \'2026-04-08 07:28:16\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'10\', 9, \'sale\', \'INV-20260408-7909\', \'Customer purchase\', \'2026-04-08 07:28:16\', \'2026-04-08 07:28:16\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:28:16 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '10', 9, 'sale', 'INV-20260408-7909', 'Customer purc...' at line 1
+[Method: POST, Route: checkout/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:28:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '10', 9, 'sale', 'INV-20260408-7909', 'Customer purc...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'10\', 9, \'sale\', \'INV-20260408-7909\', \'Customer purchase\', \'2026-04-08 07:28:16\', \'2026-04-08 07:28:16\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'10\', 9, \'sale\', \'INV-20260408-7909\', \'Customer purchase\', \'2026-04-08 07:28:16\', \'2026-04-08 07:28:16\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:28:16 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '10', 9, 'sale', 'INV-20260408-7909', 'Customer purc...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'10\', 9, \'sale\', \'INV-20260408-7909\', \'Customer purchase\', \'2026-04-08 07:28:16\', \'2026-04-08 07:28:16\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'10\', 9, \'sale\', \'INV-20260408-7909\', \'Customer purchase\', \'2026-04-08 07:28:16\', \'2026-04-08 07:28:16\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'10\', 9, \'sale\', \'INV-20260408-7909\', \'Customer purchase\', \'2026-04-08 07:28:16\', \'2026-04-08 07:28:16\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+INFO - 2026-04-08 07:28:19 --> CSRF token verified.
+DEBUG - 2026-04-08 07:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 07:28:19 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '9', 8, 'sale', 'INV-20260408-7903', 'Customer purch...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'9\', 8, \'sale\', \'INV-20260408-7903\', \'Customer purchase\', \'2026-04-08 07:28:19\', \'2026-04-08 07:28:19\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'9\', 8, \'sale\', \'INV-20260408-7903\', \'Customer purchase\', \'2026-04-08 07:28:19\', \'2026-04-08 07:28:19\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'9\', 8, \'sale\', \'INV-20260408-7903\', \'Customer purchase\', \'2026-04-08 07:28:19\', \'2026-04-08 07:28:19\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:28:19 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '9', 8, 'sale', 'INV-20260408-7903', 'Customer purch...' at line 1
+[Method: POST, Route: checkout/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:28:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '9', 8, 'sale', 'INV-20260408-7903', 'Customer purch...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'9\', 8, \'sale\', \'INV-20260408-7903\', \'Customer purchase\', \'2026-04-08 07:28:19\', \'2026-04-08 07:28:19\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'9\', 8, \'sale\', \'INV-20260408-7903\', \'Customer purchase\', \'2026-04-08 07:28:19\', \'2026-04-08 07:28:19\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 07:28:19 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('7', NULL, -1, '9', 8, 'sale', 'INV-20260408-7903', 'Customer purch...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'9\', 8, \'sale\', \'INV-20260408-7903\', \'Customer purchase\', \'2026-04-08 07:28:19\', \'2026-04-08 07:28:19\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'9\', 8, \'sale\', \'INV-20260408-7903\', \'Customer purchase\', \'2026-04-08 07:28:19\', \'2026-04-08 07:28:19\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (\'7\', NULL, -1, \'9\', 8, \'sale\', \'INV-20260408-7903\', \'Customer purchase\', \'2026-04-08 07:28:19\', \'2026-04-08 07:28:19\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `stock_logs` (`product_id`, `user_id`, `quantity_change`, `previous_quantity`, `new_quantity`, `type`, `reference_no`, `reason`, `created_at`, ) VALUES (:product_id:, :user_id:, :quantity_change:, :previous_quantity:, :new_quantity:, :type:, :reference_no:, :reason:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Shop.php(177): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Shop->processCheckout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Shop))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+INFO - 2026-04-08 07:28:25 --> CSRF token verified.
+DEBUG - 2026-04-08 07:28:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:28:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:28:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:28:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:28:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 07:29:04 --> CSRF token verified.
+DEBUG - 2026-04-08 07:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:29:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:29:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:29:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:30:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:30:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:30:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:30:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:30:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:31:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:31:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:31:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:31:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:31:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:32:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 07:32:17 --> CSRF token verified.
+DEBUG - 2026-04-08 07:32:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 07:32:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
