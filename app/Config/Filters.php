@@ -19,6 +19,7 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'auth'          => \App\Filters\AuthFilter::class,
         'admin'         => \App\Filters\AdminFilter::class,
+        'customer_auth' => \App\Filters\CustomerAuthFilter::class,
     ];
 
     public $globals = [

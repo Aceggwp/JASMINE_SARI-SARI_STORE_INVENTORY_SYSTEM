@@ -31,6 +31,23 @@ $routes->post('/register', 'Auth::doRegister');
 $routes->post('/auth/register', 'Auth::doRegister');
 $routes->get('/logout', 'Auth::logout');
 
+// ==================== CUSTOMER AUTH ====================
+$routes->get('/customer/login', 'CustomerAuth::login');
+$routes->post('/customer/login', 'CustomerAuth::attempt');
+$routes->get('/customer/register', 'CustomerAuth::register');
+$routes->post('/customer/register', 'CustomerAuth::doRegister');
+$routes->get('/customer/logout', 'CustomerAuth::logout');
+
+// ==================== CUSTOMER SHOPPING ROUTES (Public) ====================
+$routes->get('/shop', 'Shop::index');                    // Product listing
+$routes->get('/cart', 'Shop::cart');                     // View cart
+$routes->post('/cart/add', 'Shop::addToCart');           // Add item
+$routes->post('/cart/update', 'Shop::updateCart');       // Update quantity
+$routes->get('/cart/remove/(:num)', 'Shop::removeFromCart/$1');
+$routes->get('/checkout', 'Shop::checkout');             // Checkout form
+$routes->post('/checkout/process', 'Shop::processCheckout');
+$routes->get('/order/success/(:any)', 'Shop::orderSuccess/$1');
+
 // ==================== PROTECTED ROUTES (Logged in users) ====================
 $routes->group('', ['filter' => 'auth'], function($routes) {
     

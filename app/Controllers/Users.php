@@ -13,10 +13,11 @@ class Users extends BaseController
         return view('users/index', $data);
     }
     
-    public function create()
-    {
-        return view('users/form');
-    }
+   public function create()
+{
+    $data['user'] = [];  // Ensure $user exists in view
+    return view('users/form', $data);
+}
     
     public function store()
     {
