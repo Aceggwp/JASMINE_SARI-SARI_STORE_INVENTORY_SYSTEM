@@ -25,6 +25,7 @@
         }
     </style>
 </head>
+<body class="<?= service('uri')->getSegment(1) === 'login' ? 'login-page' : '' ?>">
 <body class="bg-light">
     <div class="container d-flex align-items-center justify-content-center min-vh-100">
         <div class="col-md-5">

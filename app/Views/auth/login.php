@@ -33,8 +33,10 @@
             
             <div class="form-floating mb-3">
                 <input type="password" class="form-control rounded-3" id="password" name="password" placeholder="password" required>
-                <label for="password"><i class="fas fa-lock me-2"></i>Password</label>
+                <label for="password"><i class="fas fa-lock me-2"></i>Password </label>
             </div>
+
+            
             
             <button type="submit" class="btn btn-primary w-100 py-2 rounded-3 fw-semibold">Login</button>
             
