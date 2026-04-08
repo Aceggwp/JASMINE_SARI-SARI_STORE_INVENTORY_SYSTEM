@@ -69,6 +69,7 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
         
         // Category Management
         $routes->get('/categories', 'Categories::index');
+        $routes->get('/categories/create', 'Categories::create');
         $routes->post('/categories/store', 'Categories::store');
         $routes->post('/categories/update/(:num)', 'Categories::update/$1');
         $routes->get('/categories/delete/(:num)', 'Categories::delete/$1');
