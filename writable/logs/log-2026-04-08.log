@@ -588,3 +588,879 @@ in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
 14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:02:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 01:02:05 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:05\', \'2026-04-08 01:02:05\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:05\', \'2026-04-08 01:02:05\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:05\', \'2026-04-08 01:02:05\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:02:05 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:02:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:05\', \'2026-04-08 01:02:05\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:05\', \'2026-04-08 01:02:05\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:02:05 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:05\', \'2026-04-08 01:02:05\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:05\', \'2026-04-08 01:02:05\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:05\', \'2026-04-08 01:02:05\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:02:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 01:02:08 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:08\', \'2026-04-08 01:02:08\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:08\', \'2026-04-08 01:02:08\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:08\', \'2026-04-08 01:02:08\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:02:08 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:02:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:08\', \'2026-04-08 01:02:08\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:08\', \'2026-04-08 01:02:08\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:02:08 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:08\', \'2026-04-08 01:02:08\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:08\', \'2026-04-08 01:02:08\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:08\', \'2026-04-08 01:02:08\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:02:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 01:02:18 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:18\', \'2026-04-08 01:02:18\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:18\', \'2026-04-08 01:02:18\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:18\', \'2026-04-08 01:02:18\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:02:18 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:02:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:18\', \'2026-04-08 01:02:18\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:18\', \'2026-04-08 01:02:18\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:02:18 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:18\', \'2026-04-08 01:02:18\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:18\', \'2026-04-08 01:02:18\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:02:18\', \'2026-04-08 01:02:18\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(6): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 01:03:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:27 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:27 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 01:03:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:27 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:27 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:27\', \'2026-04-08 01:03:27\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 01:03:28 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:28 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:28 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 01:03:28 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:28 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:03:28 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:03:28\', \'2026-04-08 01:03:28\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:05:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 01:05:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:27\', \'2026-04-08 01:05:27\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:27\', \'2026-04-08 01:05:27\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:27\', \'2026-04-08 01:05:27\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:05:27 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:05:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:27\', \'2026-04-08 01:05:27\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:27\', \'2026-04-08 01:05:27\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:05:27 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:27\', \'2026-04-08 01:05:27\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:27\', \'2026-04-08 01:05:27\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:27\', \'2026-04-08 01:05:27\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:05:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 01:05:28 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:28\', \'2026-04-08 01:05:28\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:28\', \'2026-04-08 01:05:28\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:28\', \'2026-04-08 01:05:28\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:05:28 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:05:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:28\', \'2026-04-08 01:05:28\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:28\', \'2026-04-08 01:05:28\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:05:28 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:28\', \'2026-04-08 01:05:28\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:28\', \'2026-04-08 01:05:28\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:28\', \'2026-04-08 01:05:28\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:05:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-08 01:05:29 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:29\', \'2026-04-08 01:05:29\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:29\', \'2026-04-08 01:05:29\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:29\', \'2026-04-08 01:05:29\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:05:29 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:05:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:29\', \'2026-04-08 01:05:29\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:29\', \'2026-04-08 01:05:29\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+CRITICAL - 2026-04-08 01:05:29 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('1', 'Logout', 'User admin logged out', '::1', 'Mozilla/5.0 (Window...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:29\', \'2026-04-08 01:05:29\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:29\', \'2026-04-08 01:05:29\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (\'1\', \'Logout\', \'User admin logged out\', \'::1\', \'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\', \'2026-04-08 01:05:29\', \'2026-04-08 01:05:29\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `activity_logs` (`user_id`, `action`, `description`, `ip_address`, `user_agent`, `created_at`, ) VALUES (:user_id:, :action:, :description:, :ip_address:, :user_agent:, :created_at:, ::)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Helpers\activity_helper.php(9): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Auth.php(47): log_activity('Logout', 'User admin logged out')
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->logout()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:07:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:07:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 01:07:57 --> CSRF token verified.
+DEBUG - 2026-04-08 01:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:08:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:08:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 01:08:08 --> CSRF token verified.
+DEBUG - 2026-04-08 01:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:08:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-08 01:08:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "products/index.php"
+[Method: GET, Route: products]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('products/index.php')
+ 2 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('products/index', [], true)
+ 3 APPPATH\Controllers\Products.php(18): view('products/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Products->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:08:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-08 01:08:42 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "sales/index.php"
+[Method: GET, Route: sales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('sales/index.php')
+ 2 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('sales/index', [], true)
+ 3 APPPATH\Controllers\Sales.php(19): view('sales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Sales->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:08:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-08 01:08:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "stock/index.php"
+[Method: GET, Route: stock]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('stock/index.php')
+ 2 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('stock/index', [], true)
+ 3 APPPATH\Controllers\Stock.php(17): view('stock/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Stock->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Stock))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-08 01:08:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "logs/index.php"
+[Method: GET, Route: logs]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('logs/index.php')
+ 2 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('logs/index', [], true)
+ 3 APPPATH\Controllers\Logs.php(17): view('logs/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Logs->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logs))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:08:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-08 01:08:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "users/index.php"
+[Method: GET, Route: users]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('users/index.php')
+ 2 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('users/index', [], true)
+ 3 APPPATH\Controllers\Users.php(13): view('users/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Users->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:08:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:08:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:08:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-08 01:08:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "products/index.php"
+[Method: GET, Route: products]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('products/index.php')
+ 2 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('products/index', [], true)
+ 3 APPPATH\Controllers\Products.php(18): view('products/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Products->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:09:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-08 01:09:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "users/index.php"
+[Method: GET, Route: users]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('users/index.php')
+ 2 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('users/index', [], true)
+ 3 APPPATH\Controllers\Users.php(13): view('users/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Users->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:09:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-04-08 01:09:26 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "products/index.php"
+[Method: GET, Route: products]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('products/index.php')
+ 2 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('products/index', [], true)
+ 3 APPPATH\Controllers\Products.php(18): view('products/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Products->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jasmine-sari-sari-store\\public\\index.php')
+DEBUG - 2026-04-08 01:12:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:22:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:23:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:23:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:23:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:24:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-08 01:25:39 --> CSRF token verified.
+DEBUG - 2026-04-08 01:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-08 01:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

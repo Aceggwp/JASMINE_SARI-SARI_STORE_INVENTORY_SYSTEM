@@ -2,12 +2,20 @@
 
 function log_activity($action, $description = null)
 {
-    $model = new \App\Models\ActivityLogModel();
-    $model->insert([
-        'user_id' => session()->get('user_id'),
-        'action' => $action,
+    $userId = session()->get('user_id');
+    if (!$userId) {
+        return; // No user logged in, skip logging
+    }
+
+    $db = \Config\Database::connect();
+    $builder = $db->table('activity_logs');
+    
+    $builder->insert([
+        'user_id'     => $userId,
+        'action'      => $action,
         'description' => $description,
-        'ip_address' => \Config\Services::request()->getIPAddress(),
-        'user_agent' => \Config\Services::request()->getUserAgent()->getAgentString()
+        'ip_address'  => \Config\Services::request()->getIPAddress(),
+        'user_agent'  => \Config\Services::request()->getUserAgent()->getAgentString(),
+        'created_at'  => date('Y-m-d H:i:s')
     ]);
 }
