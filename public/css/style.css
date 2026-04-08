@@ -451,3 +451,110 @@ body.login-page .auth-card {
 * {
     transition: background-color 0.3s ease, color 0.2s ease, border-color 0.2s ease;
 }
+
+/* ===== GLASSMORPHISM CARDS ===== */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 28px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+body.dark .glass-card {
+    background: rgba(30, 30, 40, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+}
+
+.glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
+}
+
+/* Progress bars gradients */
+.progress-bar.bg-gradient-green {
+    background: linear-gradient(90deg, #a8e6cf, #7ec8a5);
+}
+.progress-bar.bg-gradient-warning {
+    background: linear-gradient(90deg, #ffd3b6, #ffb88c);
+}
+.progress-bar.bg-gradient-blue {
+    background: linear-gradient(90deg, #b5ead7, #8fd3bc);
+}
+.progress-bar.bg-gradient-danger {
+    background: linear-gradient(90deg, #ffaaa5, #ff8a85);
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.animate-slide-down {
+    animation: slideDown 0.5s ease forwards;
+}
+
+.animate-slide-right {
+    animation: slideRight 0.4s ease forwards;
+    opacity: 0;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Progress label style */
+.progress-label {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+/* Counter number style */
+.counter {
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--text-primary), var(--btn-primary-bg));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

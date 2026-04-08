@@ -52,3 +52,31 @@ function toggleTheme() {
 function toggleSidebar() {
     $('.sidebar').toggleClass('open');
 }
+
+// Animated counters
+function animateCounters() {
+    $('.counter').each(function() {
+        const $this = $(this);
+        const target = parseInt($this.data('target'));
+        if (isNaN(target)) return;
+        
+        let current = 0;
+        const increment = Math.ceil(target / 30);
+        const updateCounter = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                $this.text(target);
+                clearInterval(updateCounter);
+            } else {
+                $this.text(current);
+            }
+        }, 30);
+    });
+}
+
+// Trigger counters when dashboard is visible
+$(document).ready(function() {
+    if ($('.counter').length) {
+        animateCounters();
+    }
+});
