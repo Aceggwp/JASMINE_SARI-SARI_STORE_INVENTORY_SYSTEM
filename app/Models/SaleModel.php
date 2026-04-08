@@ -11,6 +11,7 @@ class SaleModel extends Model
     protected $allowedFields = ['invoice_no', 'user_id', 'customer_name', 'total_amount', 'discount', 'tax', 'grand_total', 'payment_method', 'payment_status', 'notes', 'sale_date'];
     protected $useTimestamps = true;
     protected $createdField = 'created_at';
+    protected $updatedField = null; // 👈 Disable updated_at (table has no such column)
     
     public function getTopProducts($limit = 5)
     {

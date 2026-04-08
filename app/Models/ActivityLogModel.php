@@ -11,4 +11,5 @@ class ActivityLogModel extends Model
     protected $allowedFields = ['user_id', 'action', 'description', 'ip_address', 'user_agent'];
     protected $useTimestamps = true;
     protected $createdField = 'created_at';
+    protected $updatedField = null; // 👈 Disable updated_at
 }
