@@ -13,8 +13,11 @@
     <?= view('layout/sidebar') ?>
     
     <div class="main-content">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
+                <button class="navbar-toggler" type="button" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <a class="navbar-brand" href="#">Jasmine Sari Sari Store</a>
                 <div class="navbar-nav ms-auto">
                     <span class="nav-link text-light">Welcome, <?= session()->get('full_name') ?></span>
@@ -40,6 +43,12 @@
             
             <?= $this->renderSection('content') ?>
         </div>
+    </div>
+    
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" id="themeToggle">
+        <i id="themeIcon" class="fas fa-moon"></i>
+        <span id="themeText">Dark Mode</span>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

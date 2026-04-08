@@ -1,11 +1,11 @@
 <div class="sidebar">
     <div class="sidebar-header">
-        <h5>Inventory System</h5>
+        <h5><i class="fas fa-store"></i> Inventory System</h5>
     </div>
     <ul class="nav flex-column">
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('/dashboard') ?>">
-                <i class="fas fa-dashboard"></i> Dashboard
+                <i class="fas fa-tachometer-alt"></i> Dashboard
             </a>
         </li>
         <li class="nav-item">

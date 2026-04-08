@@ -11,34 +11,44 @@ $(document).ready(function() {
         });
     }
     
-    // Auto-hide alerts after 3 seconds
+    // Auto-hide alerts after 4 seconds
     setTimeout(function() {
         $('.alert').fadeOut('slow');
-    }, 3000);
+    }, 4000);
     
-    // Stock adjustment form validation
-    $('#stock-form').on('submit', function(e) {
-        const quantity = parseInt($('#quantity').val());
-        if (isNaN(quantity) || quantity <= 0) {
-            e.preventDefault();
-            alert('Please enter a valid quantity');
-            return false;
-        }
-    });
+    // Theme handling
+    initTheme();
+    $('#themeToggle').on('click', toggleTheme);
 });
 
-// AJAX function to get product details
-function getProductDetails(productId) {
-    $.ajax({
-        url: baseUrl + '/api/get-product/' + productId,
-        type: 'GET',
-        dataType: 'json',
-        success: function(data) {
-            if (data.success) {
-                $('#product_price').val(data.product.price);
-                $('#current_stock').val(data.product.quantity);
-                $('#product_name').val(data.product.name);
-            }
-        }
-    });
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        $('body').addClass('dark');
+        $('#themeIcon').removeClass('fa-moon').addClass('fa-sun');
+        $('#themeText').text('Light Mode');
+    } else {
+        $('body').removeClass('dark');
+        $('#themeIcon').removeClass('fa-sun').addClass('fa-moon');
+        $('#themeText').text('Dark Mode');
+    }
+}
+
+function toggleTheme() {
+    if ($('body').hasClass('dark')) {
+        $('body').removeClass('dark');
+        localStorage.setItem('theme', 'light');
+        $('#themeIcon').removeClass('fa-sun').addClass('fa-moon');
+        $('#themeText').text('Dark Mode');
+    } else {
+        $('body').addClass('dark');
+        localStorage.setItem('theme', 'dark');
+        $('#themeIcon').removeClass('fa-moon').addClass('fa-sun');
+        $('#themeText').text('Light Mode');
+    }
+}
+
+// Optional: Mobile sidebar toggle (if you add a hamburger menu)
+function toggleSidebar() {
+    $('.sidebar').toggleClass('open');
 }
