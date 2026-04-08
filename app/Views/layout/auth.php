@@ -38,6 +38,12 @@
         <span id="themeText">Dark Mode</span>
     </div>
 
+    <div class="container d-flex align-items-center justify-content-center min-vh-100 py-5">
+    <div class="col-md-6 col-lg-5">
+        <?= $this->renderSection('content') ?>
+    </div>
+</div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url('js/custom.js') ?>"></script>
