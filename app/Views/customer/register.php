@@ -4,7 +4,7 @@
 <div class="card auth-card">
     <div class="card-header text-center">
         <h4><i class="fas fa-user-plus"></i> Customer Registration</h4>
-        <p class="text-muted">Create an account</p>
+        <p class="text-muted">Create an account to shop</p>
     </div>
     <div class="card-body p-4">
         <?php if(isset($errors) && is_array($errors)): ?>

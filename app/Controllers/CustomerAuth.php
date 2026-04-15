@@ -15,26 +15,26 @@ class CustomerAuth extends BaseController
     }
 
     public function attempt()
-    {
-        $model = new CustomerModel();
-        $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
+{
+    $model = new CustomerModel();
+    $email = $this->request->getPost('email');
+    $password = $this->request->getPost('password');
 
-        $customer = $model->where('email', $email)
-                          ->where('is_active', 1)
-                          ->first();
+    $customer = $model->where('email', $email)
+                      ->where('is_active', 1)
+                      ->first();
 
-        if ($customer && password_verify($password, $customer['password'])) {
-            session()->set([
-                'customer_id'    => $customer['id'],
-                'customer_name'  => $customer['name'],
-                'customer_email' => $customer['email'],
-                'customer_logged_in' => true
-            ]);
-            return redirect()->to('/shop')->with('success', 'Welcome back, ' . $customer['name']);
-        }
-        return redirect()->back()->with('error', 'Invalid email or password');
+    if ($customer && password_verify($password, $customer['password'])) {
+        session()->set([
+            'customer_id'    => $customer['id'],
+            'customer_name'  => $customer['name'],
+            'customer_email' => $customer['email'],
+            'customer_logged_in' => true
+        ]);
+        return redirect()->to('/shop')->with('success', 'Welcome, ' . $customer['name']);
     }
+    return redirect()->back()->with('error', 'Invalid email or password');
+}
 
     public function register()
     {

@@ -8,12 +8,13 @@ class Auth extends BaseController
 {
     // Show login form
     public function login()
-    {
-        if (session()->get('is_logged_in')) {
-            return redirect()->to('/dashboard');
-        }
-        return view('auth/login');
+{
+    if (session()->get('is_logged_in')) {
+        return redirect()->to('/dashboard');
     }
+    // Redirect to admin login (hidden)
+    return redirect()->to('/admin');
+}
     
     // Process login attempt
     public function auth()
