@@ -21,11 +21,6 @@ $routes->set404Override();
 $routes->setAutoRoute(false);
 
 
-// ==================== ADMIN/STAFF LOGIN (Hidden - No Public Links) ====================
-$routes->get('/admin', 'AdminAuth::login');
-$routes->post('/admin/auth', 'AdminAuth::attempt');
-$routes->get('/admin/logout', 'AdminAuth::logout');
-
 // ==================== AUTHENTICATION (Public) ====================
 $routes->get('/', 'Auth::login');
 $routes->get('/login', 'Auth::login');
@@ -44,10 +39,6 @@ $routes->get('/customer/register', 'CustomerAuth::register');
 $routes->post('/customer/register', 'CustomerAuth::doRegister');
 $routes->get('/customer/logout', 'CustomerAuth::logout');
 
-// ==================== ADMIN/STAFF LOGIN (Hidden - No Public Links) ====================
-$routes->get('/admin/login', 'AdminAuth::login');
-$routes->post('/admin/auth', 'AdminAuth::attempt');
-$routes->get('/admin/logout', 'AdminAuth::logout');
 
 
 // ==================== CUSTOMER SHOPPING ROUTES (Public) ====================
