@@ -13,6 +13,7 @@ class BaseController extends Controller
     protected $helpers = ['url', 'form', 'session', 'activity'];
     protected $session;
     
+    
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         parent::initController($request, $response, $logger);

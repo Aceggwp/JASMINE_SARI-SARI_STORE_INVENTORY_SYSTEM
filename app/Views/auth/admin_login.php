@@ -3,8 +3,8 @@
 
 <div class="card auth-card">
     <div class="card-header text-center">
-        <h4><i class="fas fa-user-tie"></i> Staff/Admin Portal</h4>
-        <p class="text-muted">Authorized personnel only</p>
+        <h4><i class="fas fa-store"></i> Jasmine Store</h4>
+        <p class="text-muted">Sign In</p>
     </div>
     <div class="card-body p-4">
         <?php if(session()->getFlashdata('error')): ?>

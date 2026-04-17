@@ -21,11 +21,19 @@ $routes->set404Override();
 $routes->setAutoRoute(false);
 
 
-
 // ==================== ADMIN/STAFF LOGIN (Hidden) ====================
 $routes->get('/admin', 'AdminAuth::login');
 $routes->post('/admin/auth', 'AdminAuth::attempt');
 $routes->get('/admin/logout', 'AdminAuth::logout');
+
+// POS (Point of Sale)
+$routes->get('/pos', 'Pos::index');
+$routes->post('/pos/add-to-cart', 'Pos::addToCart');
+$routes->post('/pos/update-cart', 'Pos::updateCart');
+$routes->get('/pos/remove-from-cart/(:num)', 'Pos::removeFromCart/$1');
+$routes->post('/pos/checkout', 'Pos::checkout');
+$routes->get('/pos/receipt/(:num)', 'Pos::receipt/$1');
+$routes->get('/pos/search-products', 'Pos::searchProducts');
 
 // ==================== AUTHENTICATION (Public) ====================
 $routes->get('/', 'Auth::login');

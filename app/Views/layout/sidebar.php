@@ -24,6 +24,11 @@
             </a>
         </li>
         <li class="nav-item">
+    <a class="nav-link" href="<?= base_url('/pos') ?>">
+        <i class="fas fa-cash-register"></i> POS
+    </a>
+</li>
+        <li class="nav-item">
             <a class="nav-link" href="<?= base_url('/stock') ?>">
                 <i class="fas fa-warehouse"></i> Stock
             </a>
