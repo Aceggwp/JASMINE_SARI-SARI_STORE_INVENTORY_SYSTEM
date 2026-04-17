@@ -21,6 +21,12 @@ $routes->set404Override();
 $routes->setAutoRoute(false);
 
 
+
+// ==================== ADMIN/STAFF LOGIN (Hidden) ====================
+$routes->get('/admin', 'AdminAuth::login');
+$routes->post('/admin/auth', 'AdminAuth::attempt');
+$routes->get('/admin/logout', 'AdminAuth::logout');
+
 // ==================== AUTHENTICATION (Public) ====================
 $routes->get('/', 'Auth::login');
 $routes->get('/login', 'Auth::login');
