@@ -7,7 +7,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="<?= base_url('css/style.css') ?>" rel="stylesheet">
+    <meta name="csrf-token" content="<?= csrf_hash() ?>">
+    <meta name="csrf-header" content="<?= csrf_token() ?>">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.body.classList.add('dark');
+                });
+            }
+        })();
+    </script>
 </head>
 <body>
     <?= view('layout/sidebar') ?>
@@ -52,6 +66,15 @@
     </div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Set initial theme state before scripts load to avoid mismatch
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark');
+            }
+        })();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>

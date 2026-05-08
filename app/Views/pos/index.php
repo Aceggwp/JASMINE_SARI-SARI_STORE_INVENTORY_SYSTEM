@@ -206,6 +206,7 @@ function addToCart(id, name, price, stock) {
         cart.push({ id, name, price, quantity: 1, stock });
     }
     updateCartDisplay();
+    syncCartToSession();
 }
 
 function updateQuantity(id, change) {
@@ -221,12 +222,37 @@ function updateQuantity(id, change) {
             item.quantity = newQty;
         }
         updateCartDisplay();
+        syncCartToSession();
     }
 }
 
 function removeItem(id) {
     cart = cart.filter(item => item.id !== id);
     updateCartDisplay();
+    syncCartToSession();
+}
+
+let currentCsrfHash = '<?= csrf_hash() ?>';
+
+function syncCartToSession() {
+    $.ajax({
+        url: '<?= base_url("/pos/update-cart-session") ?>',
+        method: 'POST',
+        data: { cart: JSON.stringify(cart) },
+        success: function(response) {
+            if (response.csrf_hash) {
+                currentCsrfHash = response.csrf_hash;
+                // Also update meta tag for other scripts
+                $('meta[name="csrf-token"]').attr('content', response.csrf_hash);
+            }
+        },
+        error: function(xhr) {
+            if (xhr.status === 403) {
+                // If 403, it means our token is stale. Refresh page or try to get new token.
+                console.error('CSRF Error. Please refresh.');
+            }
+        }
+    });
 }
 
 function updateCartDisplay() {
@@ -331,7 +357,7 @@ function checkout() {
         const csrf = document.createElement('input');
         csrf.type = 'hidden';
         csrf.name = '<?= csrf_token() ?>';
-        csrf.value = '<?= csrf_hash() ?>';
+        csrf.value = currentCsrfHash;
         form.appendChild(csrf);
         
         const cartInput = document.createElement('input');

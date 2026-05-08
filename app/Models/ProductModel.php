@@ -10,6 +10,8 @@ class ProductModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = ['name', 'sku', 'category_id', 'description', 'price', 'cost_price', 'quantity', 'reorder_level', 'status'];
     protected $useTimestamps = true;
+    protected $createdField = 'created_at';
+    protected $updatedField = 'updated_at';
     protected $validationRules = [
         'name' => 'required|min_length[2]',
         'price' => 'required|numeric',

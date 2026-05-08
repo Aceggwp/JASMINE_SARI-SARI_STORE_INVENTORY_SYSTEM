@@ -30,6 +30,7 @@ $routes->get('/admin/logout', 'AdminAuth::logout');
 $routes->get('/pos', 'Pos::index');
 $routes->post('/pos/add-to-cart', 'Pos::addToCart');
 $routes->post('/pos/update-cart', 'Pos::updateCart');
+$routes->post('/pos/update-cart-session', 'Pos::updateCartSession');
 $routes->get('/pos/remove-from-cart/(:num)', 'Pos::removeFromCart/$1');
 $routes->post('/pos/checkout', 'Pos::checkout');
 $routes->get('/pos/receipt/(:num)', 'Pos::receipt/$1');
@@ -75,17 +76,13 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
     // Dashboard
     $routes->get('/dashboard', 'Dashboard::index');
     
-    // Sales (POS, Cart, History, Receipt)
-    $routes->get('/sales/create', 'Sales::create');   // Show sale creation form
-    $routes->get('/sales', 'Sales::index');              // <-- ADD THIS (list of sales)
-    $routes->get('/sales/pos', 'Sales::pos');
-    $routes->post('/sales/addToCart', 'Sales::addToCart');
-    $routes->get('/sales/getCart', 'Sales::getCart');
-    $routes->post('/sales/updateCart', 'Sales::updateCart');
-    $routes->get('/sales/removeFromCart/(:num)', 'Sales::removeFromCart/$1');
-    $routes->post('/sales/checkout', 'Sales::checkout');
-    $routes->get('/sales/receipt/(:num)', 'Sales::receipt/$1');
-    $routes->get('/sales/history', 'Sales::history');
+    // Sales
+    $routes->get('/sales/create', 'Sales::create');
+    $routes->post('/sales/store', 'Sales::store');
+    $routes->get('/sales', 'Sales::index');
+    $routes->get('/sales/(:num)', 'Sales::show/$1');
+    $routes->get('/sales/delete/(:num)', 'Sales::delete/$1');
+    $routes->get('/sales/invoice/(:num)', 'Sales::invoice/$1');
     
     // Reports (accessible by both admin and staff)
     $routes->get('/reports', 'Reports::index');

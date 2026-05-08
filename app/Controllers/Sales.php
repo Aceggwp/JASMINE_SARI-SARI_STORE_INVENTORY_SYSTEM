@@ -12,10 +12,15 @@ class Sales extends BaseController
     public function index()
     {
         $model = new SaleModel();
-        $data['sales'] = $model->select('sales.*, users.full_name as cashier')
-                               ->join('users', 'users.id = sales.user_id', 'left')
-                               ->orderBy('sales.id', 'DESC')
-                               ->findAll();
+        try {
+            $data['sales'] = $model->select('sales.*, users.full_name as cashier')
+                                   ->join('users', 'users.id = sales.user_id', 'left')
+                                   ->orderBy('sales.id', 'DESC')
+                                   ->findAll();
+        } catch (\Exception $e) {
+            // Fallback if join fails for some reason
+            $data['sales'] = $model->orderBy('id', 'DESC')->findAll();
+        }
         return view('sales/index', $data);
     }
     

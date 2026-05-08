@@ -1,114 +1,99 @@
 <?= $this->extend('layout/app') ?>
 <?= $this->section('content') ?>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <div class="dashboard-header mb-4">
-    <h2 class="fw-bold animate-slide-down">Dashboard</h2>
-    <p class="text-muted animate-slide-down" style="animation-delay: 0.1s;">Welcome back, <?= session()->get('full_name') ?>!</p>
+    <h2 class="fw-bold">Dashboard Overview</h2>
+    <p class="text-secondary">Welcome back, <?= session()->get('full_name') ?>! Here's what's happening today.</p>
+</div>
+
+<div class="row g-4 mb-4">
+    <!-- Sales Chart -->
+    <div class="col-lg-8">
+        <div class="card h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span><i class="fas fa-chart-bar me-2"></i>Sales Performance</span>
+                <select class="form-select form-select-sm glass-input" style="width: 120px;">
+                    <option>Last 7 Days</option>
+                    <option>This Month</option>
+                </select>
+            </div>
+            <div class="card-body">
+                <div style="height: 300px;">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Summary -->
+    <div class="col-lg-4">
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="card" style="background: linear-gradient(135deg, rgba(72, 187, 120, 0.2) 0%, rgba(56, 161, 105, 0.1) 100%);">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="rounded-circle p-3 me-3" style="background: rgba(72, 187, 120, 0.2);">
+                            <i class="fas fa-shopping-cart text-success fa-lg"></i>
+                        </div>
+                        <div>
+                            <h6 class="text-secondary mb-0">Total Products</h6>
+                            <h3 class="fw-bold mb-0 counter" data-target="<?= $total_products ?>">0</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card" style="background: linear-gradient(135deg, rgba(66, 153, 225, 0.2) 0%, rgba(49, 130, 206, 0.1) 100%);">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="rounded-circle p-3 me-3" style="background: rgba(66, 153, 225, 0.2);">
+                            <i class="fas fa-money-bill-wave text-primary fa-lg"></i>
+                        </div>
+                        <div>
+                            <h6 class="text-secondary mb-0">Sales Today</h6>
+                            <h3 class="fw-bold mb-0 counter" data-target="<?= $total_sales_today ?>">0</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card" style="background: linear-gradient(135deg, rgba(245, 101, 101, 0.2) 0%, rgba(229, 62, 62, 0.1) 100%);">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="rounded-circle p-3 me-3" style="background: rgba(245, 101, 101, 0.2);">
+                            <i class="fas fa-exclamation-circle text-danger fa-lg"></i>
+                        </div>
+                        <div>
+                            <h6 class="text-secondary mb-0">Low Stock</h6>
+                            <h3 class="fw-bold mb-0 text-danger counter" data-target="<?= $low_stock_products ?>">0</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="row g-4">
-    <!-- Total Products Card -->
-    <div class="col-md-6 col-lg-3">
-        <div class="card glass-card h-100 animate-fade-up">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h6 class="text-muted mb-0">Total Products</h6>
-                    <i class="fas fa-boxes fa-2x" style="color: #a8e6cf;"></i>
-                </div>
-                <h2 class="display-5 fw-bold counter" data-target="<?= $total_products ?>">0</h2>
-                <div class="progress-bar-container mt-3">
-                    <div class="progress-label small">Stock utilization</div>
-                    <div class="progress bg-light rounded-pill" style="height: 8px;">
-                        <div class="progress-bar bg-gradient-green rounded-pill" style="width: 78%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Categories Card -->
-    <div class="col-md-6 col-lg-3">
-        <div class="card glass-card h-100 animate-fade-up" style="animation-delay: 0.05s;">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h6 class="text-muted mb-0">Categories</h6>
-                    <i class="fas fa-tags fa-2x" style="color: #ffd3b6;"></i>
-                </div>
-                <h2 class="display-5 fw-bold counter" data-target="<?= $total_categories ?>">0</h2>
-                <div class="progress-bar-container mt-3">
-                    <div class="progress-label small">Active categories</div>
-                    <div class="progress bg-light rounded-pill" style="height: 8px;">
-                        <div class="progress-bar bg-gradient-warning rounded-pill" style="width: 100%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sales Today Card -->
-    <div class="col-md-6 col-lg-3">
-        <div class="card glass-card h-100 animate-fade-up" style="animation-delay: 0.1s;">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h6 class="text-muted mb-0">Sales Today</h6>
-                    <i class="fas fa-chart-line fa-2x" style="color: #b5ead7;"></i>
-                </div>
-                <h2 class="display-5 fw-bold counter" data-target="<?= $total_sales_today ?>">0</h2>
-                <div class="progress-bar-container mt-3">
-                    <div class="progress-label small">Daily target: 20</div>
-                    <div class="progress bg-light rounded-pill" style="height: 8px;">
-                        <div class="progress-bar bg-gradient-blue rounded-pill" style="width: <?= min(100, ($total_sales_today / 20) * 100) ?>%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Low Stock Items Card -->
-    <div class="col-md-6 col-lg-3">
-        <div class="card glass-card h-100 animate-fade-up" style="animation-delay: 0.15s;">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h6 class="text-muted mb-0">Low Stock Items</h6>
-                    <i class="fas fa-exclamation-triangle fa-2x" style="color: #ffaaa5;"></i>
-                </div>
-                <h2 class="display-5 fw-bold counter text-warning" data-target="<?= $low_stock_products ?>">0</h2>
-                <div class="progress-bar-container mt-3">
-                    <div class="progress-label small">Needs attention</div>
-                    <div class="progress bg-light rounded-pill" style="height: 8px;">
-                        <div class="progress-bar bg-gradient-danger rounded-pill" style="width: <?= $low_stock_products > 0 ? min(100, ($low_stock_products / $total_products) * 100) : 0 ?>%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row mt-4 g-4">
-    <!-- Recent Sales Table -->
+    <!-- Recent Sales -->
     <div class="col-lg-7">
-        <div class="card glass-card animate-fade-up" style="animation-delay: 0.2s;">
-            <div class="card-header bg-transparent border-0 pt-3">
-                <h5 class="mb-0"><i class="fas fa-clock me-2"></i>Recent Sales</h5>
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-history me-2"></i>Recent Transactions
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-hover align-middle">
+                    <table class="table table-hover">
                         <thead>
-                            <tr><th>Invoice</th><th>Amount</th><th>Date</th></tr>
+                            <tr><th>Invoice</th><th>Grand Total</th><th>Date</th></tr>
                         </thead>
                         <tbody>
-                            <?php if (!empty($recent_sales)): ?>
-                                <?php foreach($recent_sales as $sale): ?>
-                                <tr class="animate-fade-in">
-                                    <td class="fw-semibold"><?= esc($sale['invoice_no']) ?></td>
-                                    <td>₱<?= number_format($sale['grand_total'], 2) ?></td>
-                                    <td><small><?= date('M d, H:i', strtotime($sale['created_at'])) ?></small></td>
-                                </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <tr><td colspan="3" class="text-center text-muted">No sales yet</td></tr>
-                            <?php endif; ?>
+                            <?php foreach($recent_sales as $sale): ?>
+                            <tr>
+                                <td class="fw-bold"><?= $sale['invoice_no'] ?></td>
+                                <td>₱<?= number_format($sale['grand_total'], 2) ?></td>
+                                <td><?= date('M d, Y', strtotime($sale['created_at'])) ?></td>
+                            </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -116,31 +101,70 @@
         </div>
     </div>
 
-    <!-- Top Products Card -->
+    <!-- Top Products -->
     <div class="col-lg-5">
-        <div class="card glass-card animate-fade-up" style="animation-delay: 0.25s;">
-            <div class="card-header bg-transparent border-0 pt-3">
-                <h5 class="mb-0"><i class="fas fa-trophy me-2"></i>Top Selling Products</h5>
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-star me-2"></i>Top Products
             </div>
             <div class="card-body">
-                <?php if (!empty($top_products)): ?>
-                    <?php foreach($top_products as $index => $product): ?>
-                    <div class="mb-3 animate-slide-right" style="animation-delay: <?= 0.3 + $index * 0.05 ?>s;">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span><?= esc($product['name']) ?></span>
-                            <span class="fw-bold"><?= $product['total_sold'] ?> units</span>
-                        </div>
-                        <div class="progress bg-light rounded-pill" style="height: 6px;">
-                            <div class="progress-bar bg-gradient-green rounded-pill" style="width: <?= min(100, ($product['total_sold'] / max(array_column($top_products, 'total_sold'))) * 100) ?>%;"></div>
-                        </div>
+                <?php foreach($top_products as $product): ?>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="text-secondary"><?= $product['name'] ?></span>
+                        <span class="fw-bold"><?= $product['total_sold'] ?> Sold</span>
                     </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <p class="text-muted text-center">No sales data yet</p>
-                <?php endif; ?>
+                    <div class="progress" style="height: 8px; background: rgba(0,0,0,0.05);">
+                        <div class="progress-bar" style="width: <?= min(100, ($product['total_sold'] / 50) * 100) ?>%; background: var(--btn-primary-bg); border-radius: 10px;"></div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    
+    // Gradient for the bars
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, 'rgba(72, 187, 120, 0.8)');
+    gradient.addColorStop(1, 'rgba(72, 187, 120, 0.2)');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Sales (₱)',
+                data: [12000, 19000, 15000, 25000, 22000, 30000, 28000],
+                backgroundColor: gradient,
+                borderRadius: 12,
+                borderSkipped: false,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: { display: false },
+                    ticks: { color: '#94a3b8' }
+                },
+                x: {
+                    grid: { display: false },
+                    ticks: { color: '#94a3b8' }
+                }
+            }
+        }
+    });
+});
+</script>
 
 <?= $this->endSection() ?>

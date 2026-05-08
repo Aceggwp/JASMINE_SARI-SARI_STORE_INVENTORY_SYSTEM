@@ -24,7 +24,7 @@ class Filters extends BaseConfig
 
     public $globals = [
         'before' => [
-            'csrf',
+            'csrf' => ['except' => ['pos/update-cart-session']],
         ],
         'after' => [
             'toolbar',

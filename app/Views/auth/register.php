@@ -2,16 +2,11 @@
 <?= $this->section('content') ?>
 
 <div class="card auth-card shadow-lg border-0 rounded-4 overflow-hidden">
-    <div class="card-header text-center">
-    <h4><i class="fas fa-user-tie"></i> Staff Registration</h4>
-    <p class="text-muted">Create a staff account to manage the store</p>
-</div>
-        <h3 class="fw-bold mb-1">Create Account</h3>
-        <h4><i class="fas fa-user-tie"></i> Staff Registration</h4>
-<p class="text-muted">Create a staff account (for store management)</p>
-        <p class="text-muted small">Join our store management system</p>
+    <div class="card-header text-center pt-4 pb-3">
+        <h4 class="fw-bold"><i class="fas fa-user-tie me-2"></i>Staff Registration</h4>
+        <p class="text-muted small">Create an account to manage the store</p>
     </div>
-    <div class="card-body p-4 pt-0">
+    <div class="card-body p-4 pt-2">
         <?php if (session()->getFlashdata('error')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <?= session()->getFlashdata('error') ?>
@@ -60,7 +55,7 @@
             <hr class="my-4">
             
             <div class="text-center">
-                <small class="text-muted">Already have an account? <a href="<?= base_url('/login') ?>" class="text-decoration-none">Sign in</a></small>
+                <small class="text-muted">Already have an account? <a href="<?= base_url('/admin') ?>" class="text-decoration-none">Sign in</a></small>
             </div>
         </form>
     </div>

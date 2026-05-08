@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    // Setup AJAX CSRF
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
     // Initialize DataTables
     if ($('.datatable').length) {
         $('.datatable').DataTable({
@@ -25,10 +32,12 @@ function initTheme() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         $('body').addClass('dark');
+        document.documentElement.classList.add('dark');
         $('#themeIcon').removeClass('fa-moon').addClass('fa-sun');
         $('#themeText').text('Light Mode');
     } else {
         $('body').removeClass('dark');
+        document.documentElement.classList.remove('dark');
         $('#themeIcon').removeClass('fa-sun').addClass('fa-moon');
         $('#themeText').text('Dark Mode');
     }
@@ -37,11 +46,13 @@ function initTheme() {
 function toggleTheme() {
     if ($('body').hasClass('dark')) {
         $('body').removeClass('dark');
+        document.documentElement.classList.remove('dark');
         localStorage.setItem('theme', 'light');
         $('#themeIcon').removeClass('fa-sun').addClass('fa-moon');
         $('#themeText').text('Dark Mode');
     } else {
         $('body').addClass('dark');
+        document.documentElement.classList.add('dark');
         localStorage.setItem('theme', 'dark');
         $('#themeIcon').removeClass('fa-moon').addClass('fa-sun');
         $('#themeText').text('Light Mode');

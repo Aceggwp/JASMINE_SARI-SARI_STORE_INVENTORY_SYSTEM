@@ -97,13 +97,33 @@ class Pos extends BaseController
         
         return redirect()->to('/pos')->with('success', 'Item removed from cart');
     }
+
+    public function updateCartSession()
+    {
+        $cartData = $this->request->getPost('cart');
+        if ($cartData) {
+            $cart = json_decode($cartData, true);
+            session()->set('pos_cart', $cart);
+        }
+        return $this->response->setJSON([
+            'success' => true,
+            'csrf_hash' => csrf_hash()
+        ]);
+    }
     
     public function checkout()
     {
-        $cart = session()->get('pos_cart') ?? [];
+        $cartData = $this->request->getPost('cart_data');
+        if ($cartData) {
+            $cart = json_decode($cartData, true);
+        } else {
+            $cart = session()->get('pos_cart') ?? [];
+        }
         
         if (empty($cart)) {
-            return redirect()->back()->with('error', 'Cart is empty');
+            // Log for debugging
+            log_message('error', 'Checkout failed: Cart is empty. POST cart_data: ' . ($cartData ? 'exists' : 'missing'));
+            return redirect()->back()->with('error', 'Cart is empty. Please add items before checking out.');
         }
         
         $customerName = $this->request->getPost('customer_name') ?: 'Walk-in Customer';
@@ -135,7 +155,8 @@ class Pos extends BaseController
             'grand_total' => $grandTotal,
             'payment_method' => $paymentMethod,
             'payment_status' => 'paid',
-            'notes' => "Paid: ₱" . number_format($paidAmount, 2) . " | Change: ₱" . number_format($change, 2)
+            'notes' => "Paid: ₱" . number_format($paidAmount, 2) . " | Change: ₱" . number_format($change, 2),
+            'sale_date' => date('Y-m-d H:i:s')
         ]);
         
         if (!$saleId) {

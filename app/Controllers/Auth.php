@@ -41,7 +41,7 @@ class Auth extends BaseController
             log_activity('Login', "User {$user['username']} logged in");
             return redirect()->to('/dashboard');
         } else {
-            return redirect()->to('/login')->with('error', 'Invalid username or password');
+            return redirect()->to('/admin')->with('error', 'Invalid username or password');
         }
     }
     
@@ -82,7 +82,7 @@ class Auth extends BaseController
         
         if ($model->insert($data)) {
             log_activity('User Registered', "New user: {$data['username']}");
-            return redirect()->to('/login')->with('success', 'Registration successful. Please login.');
+            return redirect()->to('/admin')->with('success', 'Registration successful. Please login.');
         }
         
         return redirect()->back()->withInput()->with('error', 'Registration failed.');
@@ -93,6 +93,6 @@ class Auth extends BaseController
     {
         log_activity('Logout', "User " . session()->get('username') . " logged out");
         session()->destroy();
-        return redirect()->to('/login');
+        return redirect()->to('/admin');
     }
 }

@@ -13,7 +13,6 @@ class SaleModel extends Model
     protected $allowedFields = [
         'invoice_no',
         'user_id',
-        'customer_id',
         'customer_name',
         'total_amount',
         'discount',
@@ -25,10 +24,8 @@ class SaleModel extends Model
         'sale_date'
     ];
     
-    // Use timestamps if your table has created_at & updated_at
-    protected $useTimestamps = true;
-    protected $createdField = 'created_at';
-    protected $updatedField = 'updated_at';
+    // Disable CI automatic timestamps because the database handles them
+    protected $useTimestamps = false;
     
     public function getTopProducts($limit = 5)
     {
