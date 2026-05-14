@@ -15,18 +15,22 @@
         <?php endif; ?>
         <form action="<?= base_url('/admin/auth') ?>" method="post">
             <?= csrf_field() ?>
-            <div class="mb-3">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" required autofocus>
+            <div class="form-floating mb-3">
+                <input type="text" name="username" class="form-control" id="username" placeholder="Username" required autofocus>
+                <label for="username"><i class="fas fa-user me-2"></i>Username</label>
             </div>
-            <div class="mb-3">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" required>
+            <div class="form-floating mb-4">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                <label for="password"><i class="fas fa-lock me-2"></i>Password</label>
             </div>
-            <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
-            <div class="text-center">
-                <p class="text-muted small mb-0">Don't have an account?</p>
-                <a href="<?= base_url('/register') ?>" class="text-decoration-none">Create Account</a>
+            <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 fw-bold mb-3 shadow-sm">
+                Login <i class="fas fa-arrow-right ms-2"></i>
+            </button>
+            <div class="text-center mt-4">
+                <p class="text-muted small mb-1">Don't have an account?</p>
+                <a href="<?= base_url('/register') ?>" class="text-success fw-bold text-decoration-none">
+                    Create Account
+                </a>
             </div>
         </form>
     </div>

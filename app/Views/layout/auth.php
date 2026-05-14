@@ -26,9 +26,8 @@
     </style>
 </head>
 <body class="<?= service('uri')->getSegment(1) === 'login' ? 'login-page' : '' ?>">
-<body class="bg-light">
-    <div class="container d-flex align-items-center justify-content-center min-vh-100">
-        <div class="col-md-5">
+    <div class="container d-flex align-items-center justify-content-center min-vh-100 py-5">
+        <div class="col-md-6 col-lg-5 col-xl-4">
             <?= $this->renderSection('content') ?>
         </div>
     </div>
@@ -38,12 +37,6 @@
         <i id="themeIcon" class="fas fa-moon"></i>
         <span id="themeText">Dark Mode</span>
     </div>
-
-    <div class="container d-flex align-items-center justify-content-center min-vh-100 py-5">
-    <div class="col-md-6 col-lg-5">
-        <?= $this->renderSection('content') ?>
-    </div>
-</div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -12,18 +12,17 @@
         <?php endif; ?>
         <form action="<?= base_url('/customer/login') ?>" method="post">
             <?= csrf_field() ?>
-            <div class="mb-3">
-                <label>Email Address</label>
-                <input type="email" name="email" class="form-control" required>
+            <div class="form-floating mb-3">
+                <input type="email" name="email" class="form-control" id="customer_email" placeholder="customer@example.com" required>
+                <label for="customer_email"><i class="fas fa-envelope me-2"></i>Email Address</label>
             </div>
-            <div class="mb-3">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" required>
+            <div class="form-floating mb-3">
+                <input type="password" name="password" class="form-control" id="customer_password" placeholder="Password" required>
+                <label for="customer_password"><i class="fas fa-lock me-2"></i>Password</label>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Login</button>
-            <hr>
-            <div class="text-center">
-                <small>New customer? <a href="<?= base_url('/customer/register') ?>">Register here</a></small>
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold mb-3">Login</button>
+            <div class="text-center mt-3 pt-2 border-top">
+                <p class="small text-muted mb-0">New customer? <a href="<?= base_url('/customer/register') ?>" class="text-decoration-none fw-bold">Register here</a></p>
             </div>
         </form>
     </div>

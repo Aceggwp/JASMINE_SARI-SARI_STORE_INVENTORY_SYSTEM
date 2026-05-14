@@ -122,21 +122,15 @@
         <div id="loginPanel" class="form-panel active">
             <form action="<?= base_url('/customer/auth') ?>" method="post">
                 <?= csrf_field() ?>
-                <div class="mb-3">
-                    <label>Email Address</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-transparent"><i class="fas fa-envelope"></i></span>
-                        <input type="email" name="email" class="form-control" placeholder="customer@example.com" required autofocus>
-                    </div>
+                <div class="form-floating mb-3">
+                    <input type="email" name="email" class="form-control" id="email" placeholder="customer@example.com" required autofocus>
+                    <label for="email"><i class="fas fa-envelope me-2"></i>Email Address</label>
                 </div>
-                <div class="mb-3">
-                    <label>Password</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-transparent"><i class="fas fa-lock"></i></span>
-                        <input type="password" name="password" class="form-control" placeholder="••••••" required>
-                    </div>
+                <div class="form-floating mb-3">
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                    <label for="password"><i class="fas fa-lock me-2"></i>Password</label>
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Login</button>
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Login</button>
             </form>
 
             <!-- Google Login Button -->
@@ -144,7 +138,7 @@
                 <span>OR</span>
             </div>
             
-            <a href="<?= base_url('/google-login') ?>" class="btn google-btn w-100 py-2">
+            <a href="<?= base_url('/google-login') ?>" class="btn google-btn w-100 py-2 rounded-3">
                 <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
                 Continue with Google
             </a>
@@ -154,35 +148,23 @@
         <div id="registerPanel" class="form-panel">
             <form action="<?= base_url('/customer/register') ?>" method="post">
                 <?= csrf_field() ?>
-                <div class="mb-3">
-                    <label>Full Name</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-transparent"><i class="fas fa-user"></i></span>
-                        <input type="text" name="name" class="form-control" placeholder="John Doe" required>
-                    </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="name" class="form-control" id="reg_name" placeholder="John Doe" required>
+                    <label for="reg_name"><i class="fas fa-user me-2"></i>Full Name</label>
                 </div>
-                <div class="mb-3">
-                    <label>Email Address</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-transparent"><i class="fas fa-envelope"></i></span>
-                        <input type="email" name="email" class="form-control" placeholder="customer@example.com" required>
-                    </div>
+                <div class="form-floating mb-3">
+                    <input type="email" name="email" class="form-control" id="reg_email" placeholder="customer@example.com" required>
+                    <label for="reg_email"><i class="fas fa-envelope me-2"></i>Email Address</label>
                 </div>
-                <div class="mb-3">
-                    <label>Password</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-transparent"><i class="fas fa-lock"></i></span>
-                        <input type="password" name="password" class="form-control" placeholder="Minimum 6 characters" required>
-                    </div>
+                <div class="form-floating mb-3">
+                    <input type="password" name="password" class="form-control" id="reg_password" placeholder="Password" required>
+                    <label for="reg_password"><i class="fas fa-lock me-2"></i>Password</label>
                 </div>
-                <div class="mb-3">
-                    <label>Confirm Password</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-transparent"><i class="fas fa-check-circle"></i></span>
-                        <input type="password" name="confirm_password" class="form-control" placeholder="Repeat password" required>
-                    </div>
+                <div class="form-floating mb-3">
+                    <input type="password" name="confirm_password" class="form-control" id="reg_confirm_password" placeholder="Confirm Password" required>
+                    <label for="reg_confirm_password"><i class="fas fa-check-circle me-2"></i>Confirm Password</label>
                 </div>
-                <button type="submit" class="btn btn-success w-100">Register</button>
+                <button type="submit" class="btn btn-success w-100 py-2 fw-bold">Register</button>
             </form>
             
             <div class="separator mt-4 mb-3">
