@@ -41,6 +41,14 @@ class Products extends BaseController
             'reorder_level' => $this->request->getPost('reorder_level') ?? 5,
             'status'        => $this->request->getPost('status') ?? 1
         ];
+
+        // Handle Image Upload
+        $img = $this->request->getFile('image');
+        if ($img && $img->isValid() && !$img->hasMoved()) {
+            $newName = $img->getRandomName();
+            $img->move(FCPATH . 'uploads/products', $newName);
+            $data['image'] = $newName;
+        }
         
         if ($model->insert($data)) {
             if ($data['quantity'] > 0) {
@@ -88,6 +96,21 @@ class Products extends BaseController
         'reorder_level' => $this->request->getPost('reorder_level') ?? 5,
         'status'        => $this->request->getPost('status') ?? 1
     ];
+
+    // Handle Image Upload
+    $img = $this->request->getFile('image');
+    if ($img && $img->isValid() && !$img->hasMoved()) {
+        $product = $model->find($id);
+        if ($product && isset($product['image']) && $product['image']) {
+            $oldImagePath = FCPATH . 'uploads/products/' . $product['image'];
+            if (file_exists($oldImagePath)) {
+                unlink($oldImagePath);
+            }
+        }
+        $newName = $img->getRandomName();
+        $img->move(FCPATH . 'uploads/products', $newName);
+        $data['image'] = $newName;
+    }
     
     if ($model->update($id, $data)) {
         log_activity('Update Product', "Updated product ID: {$id}");
@@ -107,6 +130,13 @@ class Products extends BaseController
 
         try {
             if ($model->delete($id)) {
+                // Delete image if exists
+                if (isset($product['image']) && $product['image']) {
+                    $imagePath = FCPATH . 'uploads/products/' . $product['image'];
+                    if (file_exists($imagePath)) {
+                        unlink($imagePath);
+                    }
+                }
                 log_activity('Delete Product', "Deleted product: {$product['name']}");
                 return redirect()->to('/products')->with('success', 'Product deleted successfully');
             }

@@ -8,7 +8,7 @@ class ProductModel extends Model
 {
     protected $table = 'products';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['name', 'sku', 'category_id', 'description', 'price', 'cost_price', 'quantity', 'reorder_level', 'status'];
+    protected $allowedFields = ['name', 'sku', 'category_id', 'description', 'price', 'cost_price', 'quantity', 'reorder_level', 'status', 'image'];
     protected $useTimestamps = true;
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';
@@ -20,7 +20,8 @@ class ProductModel extends Model
         'cost_price'    => 'permit_empty|numeric|greater_than_equal_to[0]',
         'quantity'      => 'permit_empty|numeric|greater_than_equal_to[0]',
         'reorder_level' => 'permit_empty|numeric|greater_than_equal_to[0]',
-        'status'        => 'permit_empty|in_list[0,1]'
+        'status'        => 'permit_empty|in_list[0,1]',
+        'image'         => 'permit_empty|string|max_length[255]'
     ];
 
     protected $validationMessages = [

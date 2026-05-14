@@ -3,7 +3,7 @@
 
 <h2><?= isset($product) ? 'Edit' : 'Add' ?> Product</h2>
 
-<form action="<?= isset($product) ? base_url('/products/update/'.$product['id']) : base_url('/products/store') ?>" method="post">
+<form action="<?= isset($product) ? base_url('/products/update/'.$product['id']) : base_url('/products/store') ?>" method="post" enctype="multipart/form-data">
     <?= csrf_field() ?>
     
     <div class="row">
@@ -50,6 +50,15 @@
             <div class="mb-3">
                 <label>Reorder Level</label>
                 <input type="number" name="reorder_level" class="form-control" value="<?= $product['reorder_level'] ?? 5 ?>">
+            </div>
+            <div class="mb-3">
+                <label>Product Image</label>
+                <input type="file" name="image" class="form-control" accept="image/*">
+                <?php if(isset($product) && isset($product['image']) && $product['image']): ?>
+                    <div class="mt-2">
+                        <img src="<?= base_url('uploads/products/'.$product['image']) ?>" width="100" class="img-thumbnail">
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="mb-3">
                 <label>Status</label>

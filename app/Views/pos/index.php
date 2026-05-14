@@ -82,6 +82,24 @@
         font-weight: bold;
         color: var(--btn-primary-bg);
     }
+    .product-img-container {
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f8f9fa;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .product-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .product-img-placeholder {
+        color: #dee2e6;
+    }
     .receipt-btn {
         position: fixed;
         bottom: 20px;
@@ -108,7 +126,16 @@
             <?php foreach($products as $product): ?>
             <div class="col-md-6 col-lg-4">
                 <div class="product-card" onclick="addToCart(<?= $product['id'] ?>, '<?= addslashes($product['name']) ?>', <?= $product['price'] ?>, <?= $product['quantity'] ?>)">
-                    <h6 class="mb-1"><?= esc($product['name']) ?></h6>
+                    <div class="product-img-container">
+                        <?php if(isset($product['image']) && $product['image']): ?>
+                            <img src="<?= base_url('uploads/products/'.$product['image']) ?>" alt="<?= esc($product['name']) ?>">
+                        <?php else: ?>
+                            <div class="product-img-placeholder">
+                                <i class="fas fa-box fa-3x"></i>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <h6 class="mb-1 text-truncate"><?= esc($product['name']) ?></h6>
                     <p class="product-price mb-1">₱<?= number_format($product['price'], 2) ?></p>
                     <small class="text-muted">Stock: <?= $product['quantity'] ?></small>
                     <?php if($product['quantity'] <= 5): ?>

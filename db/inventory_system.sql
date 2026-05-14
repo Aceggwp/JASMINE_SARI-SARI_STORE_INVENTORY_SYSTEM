@@ -63,6 +63,7 @@ CREATE TABLE `categories` (
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
   `status` tinyint(4) DEFAULT 1,
+  `image` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
