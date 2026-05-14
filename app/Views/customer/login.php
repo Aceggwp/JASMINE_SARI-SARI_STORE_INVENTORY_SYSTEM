@@ -13,12 +13,12 @@
         <form action="<?= base_url('/customer/login') ?>" method="post">
             <?= csrf_field() ?>
             <div class="form-floating mb-3">
-                <input type="email" name="email" class="form-control" id="customer_email" placeholder="customer@example.com" required>
-                <label for="customer_email"><i class="fas fa-envelope me-2"></i>Email Address</label>
+                <input type="email" name="email" class="form-control" id="customer_email" placeholder=" " required>
+                <label for="customer_email">Email Address</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="password" name="password" class="form-control" id="customer_password" placeholder="Password" required>
-                <label for="customer_password"><i class="fas fa-lock me-2"></i>Password</label>
+                <input type="password" name="password" class="form-control" id="customer_password" placeholder=" " required>
+                <label for="customer_password">Password</label>
             </div>
             <button type="submit" class="btn btn-primary w-100 py-2 fw-bold mb-3">Login</button>
             <div class="text-center mt-3 pt-2 border-top">

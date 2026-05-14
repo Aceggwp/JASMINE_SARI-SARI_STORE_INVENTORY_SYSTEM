@@ -109,6 +109,7 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
         // Stock Management
         $routes->get('/stock', 'Stock::index');
         $routes->get('/stock/adjust', 'Stock::adjust');
+        $routes->post('/stock/adjust-store', 'Stock::adjustStore'); // Fixed: Added missing POST route
         $routes->get('/stock/logs', 'Stock::logs');
         $routes->post('/stock/add', 'Stock::addStock');
         

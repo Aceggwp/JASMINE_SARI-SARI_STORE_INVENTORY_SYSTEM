@@ -123,12 +123,12 @@
             <form action="<?= base_url('/customer/auth') ?>" method="post">
                 <?= csrf_field() ?>
                 <div class="form-floating mb-3">
-                    <input type="email" name="email" class="form-control" id="email" placeholder="customer@example.com" required autofocus>
-                    <label for="email"><i class="fas fa-envelope me-2"></i>Email Address</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder=" " required autofocus>
+                    <label for="email">Email Address</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
-                    <label for="password"><i class="fas fa-lock me-2"></i>Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder=" " required>
+                    <label for="password">Password</label>
                 </div>
                 <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Login</button>
             </form>
@@ -149,20 +149,20 @@
             <form action="<?= base_url('/customer/register') ?>" method="post">
                 <?= csrf_field() ?>
                 <div class="form-floating mb-3">
-                    <input type="text" name="name" class="form-control" id="reg_name" placeholder="John Doe" required>
-                    <label for="reg_name"><i class="fas fa-user me-2"></i>Full Name</label>
+                    <input type="text" name="name" class="form-control" id="reg_name" placeholder=" " required>
+                    <label for="reg_name">Full Name</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="email" name="email" class="form-control" id="reg_email" placeholder="customer@example.com" required>
-                    <label for="reg_email"><i class="fas fa-envelope me-2"></i>Email Address</label>
+                    <input type="email" name="email" class="form-control" id="reg_email" placeholder=" " required>
+                    <label for="reg_email">Email Address</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" name="password" class="form-control" id="reg_password" placeholder="Password" required>
-                    <label for="reg_password"><i class="fas fa-lock me-2"></i>Password</label>
+                    <input type="password" name="password" class="form-control" id="reg_password" placeholder=" " required>
+                    <label for="reg_password">Password</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" name="confirm_password" class="form-control" id="reg_confirm_password" placeholder="Confirm Password" required>
-                    <label for="reg_confirm_password"><i class="fas fa-check-circle me-2"></i>Confirm Password</label>
+                    <input type="password" name="confirm_password" class="form-control" id="reg_confirm_password" placeholder=" " required>
+                    <label for="reg_confirm_password">Confirm Password</label>
                 </div>
                 <button type="submit" class="btn btn-success w-100 py-2 fw-bold">Register</button>
             </form>

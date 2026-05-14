@@ -38,4 +38,34 @@ class SaleModel extends Model
                         ->get()
                         ->getResultArray();
     }
+
+    public function getRevenueToday()
+    {
+        return $this->selectSum('grand_total')
+                    ->where('DATE(sale_date)', date('Y-m-d'))
+                    ->first()['grand_total'] ?? 0;
+    }
+
+    public function getDailySalesLast7Days()
+    {
+        $days = [];
+        $sales = [];
+        
+        for ($i = 6; $i >= 0; $i--) {
+            $date = date('Y-m-d', strtotime("-$i days"));
+            $dayName = date('D', strtotime($date));
+            
+            $result = $this->selectSum('grand_total')
+                           ->where('DATE(sale_date)', $date)
+                           ->first();
+            
+            $days[] = $dayName;
+            $sales[] = (float)($result['grand_total'] ?? 0);
+        }
+        
+        return [
+            'labels' => $days,
+            'data' => $sales
+        ];
+    }
 }

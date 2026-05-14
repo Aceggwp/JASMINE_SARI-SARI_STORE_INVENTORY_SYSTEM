@@ -61,13 +61,26 @@ class Categories extends BaseController
 }
     
     public function delete($id)
-{
-    $model = new CategoryModel();
-    $category = $model->find($id);
-    if ($category && $model->delete($id)) {
-        log_activity('Delete Category', "Deleted category: {$category['name']}");
-        return redirect()->to('/categories')->with('success', 'Category deleted successfully');
+    {
+        $model = new CategoryModel();
+        $category = $model->find($id);
+
+        if (!$category) {
+            return redirect()->to('/categories')->with('error', 'Category not found');
+        }
+
+        try {
+            if ($model->delete($id)) {
+                log_activity('Delete Category', "Deleted category: {$category['name']}");
+                return redirect()->to('/categories')->with('success', 'Category deleted successfully');
+            }
+        } catch (\CodeIgniter\Database\Exceptions\DatabaseException $e) {
+            if ($e->getCode() == 1451) {
+                return redirect()->to('/categories')->with('error', "Cannot delete '{$category['name']}' because it is assigned to existing products. Try deactivating it instead.");
+            }
+            return redirect()->to('/categories')->with('error', 'Database error: ' . $e->getMessage());
+        }
+
+        return redirect()->to('/categories')->with('error', 'Failed to delete category');
     }
-    return redirect()->to('/categories')->with('error', 'Failed to delete category');
-}
 }

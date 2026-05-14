@@ -51,7 +51,7 @@
                         </div>
                         <div>
                             <h6 class="text-secondary mb-0">Sales Today</h6>
-                            <h3 class="fw-bold mb-0 counter" data-target="<?= $total_sales_today ?>">0</h3>
+                            <h3 class="fw-bold mb-0">₱<span class="counter" data-target="<?= $revenue_today ?>">0</span></h3>
                         </div>
                     </div>
                 </div>
@@ -136,10 +136,10 @@ document.addEventListener('DOMContentLoaded', function() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            labels: <?= $chart_labels ?>,
             datasets: [{
                 label: 'Sales (₱)',
-                data: [12000, 19000, 15000, 25000, 22000, 30000, 28000],
+                data: <?= $chart_data ?>,
                 backgroundColor: gradient,
                 borderRadius: 12,
                 borderSkipped: false,

@@ -16,12 +16,12 @@
         <form action="<?= base_url('/admin/auth') ?>" method="post">
             <?= csrf_field() ?>
             <div class="form-floating mb-3">
-                <input type="text" name="username" class="form-control" id="username" placeholder="Username" required autofocus>
-                <label for="username"><i class="fas fa-user me-2"></i>Username</label>
+                <input type="text" name="username" class="form-control" id="username" placeholder=" " required autofocus>
+                <label for="username">Username</label>
             </div>
             <div class="form-floating mb-4">
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
-                <label for="password"><i class="fas fa-lock me-2"></i>Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder=" " required>
+                <label for="password">Password</label>
             </div>
             <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 fw-bold mb-3 shadow-sm">
                 Login <i class="fas fa-arrow-right ms-2"></i>

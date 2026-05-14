@@ -28,10 +28,12 @@ class Products extends BaseController
     public function store()
     {
         $model = new ProductModel();
+        $categoryId = $this->request->getPost('category_id');
+        
         $data = [
             'name'          => $this->request->getPost('name'),
             'sku'           => $this->request->getPost('sku'),
-            'category_id'   => $this->request->getPost('category_id'),
+            'category_id'   => empty($categoryId) ? null : $categoryId,
             'description'   => $this->request->getPost('description'),
             'price'         => $this->request->getPost('price'),
             'cost_price'    => $this->request->getPost('cost_price'),
@@ -74,10 +76,12 @@ class Products extends BaseController
     public function update($id)
 {
     $model = new ProductModel();
+    $categoryId = $this->request->getPost('category_id');
+    
     $data = [
         'name'          => $this->request->getPost('name'),
         'sku'           => $this->request->getPost('sku'),
-        'category_id'   => $this->request->getPost('category_id'),
+        'category_id'   => empty($categoryId) ? null : $categoryId,
         'description'   => $this->request->getPost('description'),
         'price'         => $this->request->getPost('price'),
         'cost_price'    => $this->request->getPost('cost_price'),
@@ -93,14 +97,27 @@ class Products extends BaseController
 }
     
     public function delete($id)
-{
-    $model = new ProductModel();
-    $product = $model->find($id);
-    
-    if ($product && $model->delete($id)) {
-        log_activity('Delete Product', "Deleted product: {$product['name']}");
-        return redirect()->to('/products')->with('success', 'Product deleted successfully');
+    {
+        $model = new ProductModel();
+        $product = $model->find($id);
+
+        if (!$product) {
+            return redirect()->to('/products')->with('error', 'Product not found');
+        }
+
+        try {
+            if ($model->delete($id)) {
+                log_activity('Delete Product', "Deleted product: {$product['name']}");
+                return redirect()->to('/products')->with('success', 'Product deleted successfully');
+            }
+        } catch (\CodeIgniter\Database\Exceptions\DatabaseException $e) {
+            // Check if it's a foreign key constraint error (1451)
+            if ($e->getCode() == 1451) {
+                return redirect()->to('/products')->with('error', "Cannot delete '{$product['name']}' because it has existing sales records. Try deactivating it instead.");
+            }
+            return redirect()->to('/products')->with('error', 'Database error: ' . $e->getMessage());
+        }
+
+        return redirect()->to('/products')->with('error', 'Failed to delete product');
     }
-    return redirect()->to('/products')->with('error', 'Failed to delete product');
-}
 }

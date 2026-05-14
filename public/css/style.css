@@ -79,9 +79,21 @@ body {
     background: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 16px;
-    padding: 12px 20px;
+    padding: 0.75rem 1.25rem;
+    height: calc(3.5rem + 2px);
+    line-height: 1.25;
     transition: var(--transition-relaxed);
     color: var(--text-primary);
+}
+
+.form-floating > .form-control:focus,
+.form-floating > .form-control:not(:placeholder-shown) {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+}
+
+.form-floating > label {
+    padding: 1rem 1.25rem;
 }
 
 body.dark .form-control, body.dark .form-select {
@@ -90,8 +102,20 @@ body.dark .form-control, body.dark .form-select {
     color: #f8fafc;
 }
 
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  opacity: .65;
+  transform: scale(.85) translateY(-0.75rem) translateX(0.15rem);
+  color: var(--text-secondary);
+}
+
+body.dark .form-floating > .form-control:focus ~ label,
+body.dark .form-floating > .form-control:not(:placeholder-shown) ~ label {
+  color: #10b981; /* Matches your theme green */
+}
+
 body.dark .form-control::placeholder {
-    color: rgba(248, 250, 252, 0.5);
+    color: transparent;
 }
 
 .form-control:focus, .form-select:focus {
