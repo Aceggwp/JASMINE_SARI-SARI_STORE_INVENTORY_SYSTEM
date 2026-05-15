@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10b981',
+                        secondary: '#48bb78',
+                    }
+                }
+            }
+        }
+    </script>
     <link href="<?= base_url('css/style.css') ?>" rel="stylesheet">
     <meta name="csrf-token" content="<?= csrf_hash() ?>">
     <meta name="csrf-header" content="<?= csrf_token() ?>">
